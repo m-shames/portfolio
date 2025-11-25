@@ -1,8 +1,23 @@
-# History files
+# =========================
+# Additional ignore
+# =========================
+
+## README HTML previews
+*README*.html
+
+## Raw data files
+*.rda
+*.rds
+
+# =========================
+# Template Ignore
+# =========================
+
+## History files
 .Rhistory
 .Rapp.history
 
-# Session Data files
+## Session Data files
 .RData
 .RDataTmp
 
