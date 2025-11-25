@@ -1,0 +1,68 @@
+---
+title: "Code Sample Explainer"
+subtitle: "Michelle Shames"
+format:
+  pdf:
+    geometry:
+      - top=0.5in
+    documentclass: article
+    toc: false
+    embed-resources: true
+    code-fold: show
+    link-external-newwindow: true
+execute:
+  warning: false 
+from: markdown+emoji
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| echo: FALSE
+
+# Packages
+library(tidyverse) 
+library(scales)
+```
+
+
+:::{.callout-tip appearance="simple"}
+***❊The code sample corresponding to this document is available [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight/1_code-sample).❊***
+:::
+
+## Sample Background
+For part of my dissertation, I evaluated Chicago Civilian Review Board (CRB) reforms and their impact on misconduct complaint investigation findings and officer discipline. In this document, I provide a brief overview of the project and indicate where additional information can be found. The [code sample](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight/1_code-sample) corresponding to this document consists of excerpts from various stages of this project. Further code will happily be provided upon request. *Please note, some outputs are suppressed or may not run due to private storage of confidential data.*    
+   
+  
+***This document was created and rendered using Quarto, the code for which is available in my code sample GitHub repository [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight/1_code-sample).***  
+
+## Project Background & Research Objectives 
+In 2017, Chicago implemented a series of reforms aimed at strengthening civilian review and independent oversight of the Chicago Police Department (CPD). The reforms centered around the launch of The Civilian Office of Police Accountability (COPA), which replaced The Independent Police Review Authority (IPRA), Chicago's former CRB. The primary function of both agencies was to investigate allegations of CPD misconduct, but COPA was given greater resources, jurisdiction, and independence from the CPD than its predecessor agency. While anecdotal evidence indicates that complaints are being sustained at a higher right since COPA's launch, no empirical research has indicating whether this increase can be attributed to the reforms themselves. Furthermore, even less research has been conducted on patterns of officer discipline.  
+
+**Guided by these research gaps, this project answers two primary questions:**  
+
+1. Did Chicago's civilian oversight reforms causally impact complaint substantiation rates, disciplinary recommendations, and CPD implementation of CRB recommendations?    
+2. Did the reforms reduce racial disparities in police misconduct investigation outcomes?    
+
+Parts of this project are also used as a case study to investigate whether a novel use of ML, which I term PMGCOs, is more suitable for causal research than traditional designs like DiD and RDD in policy evaluation settings with universal compliance and no viable control group.
+
+## Methods & Findings
+```{r}
+#| label: sample-n
+#| echo: FALSE
+
+sample_n <- 26000 
+```
+
+This analysis uses a database of `r scales::comma(sample_n)` misconduct complaints I built by acquiring and integrating public and FOIA data from law enforcement, civilian oversight agencies, and the U.S. Census Bureau. Further code and documentation related to research design, analyses, and findings, can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight/1_code-sample). 
+
+:::{.callout-warning collapse=true}
+## Disclaimer 
+This research is ongoing and the public repo may not represent current findings. Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
+:::  
+
+
+\begin{center}
+Last modified: Dec 05, 2025 
+\end{center}
