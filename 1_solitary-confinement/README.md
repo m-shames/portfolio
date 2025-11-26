@@ -6,7 +6,7 @@ Quantitative research on solitary confinement practices, policies, and reforms u
 
 ## Statistical & Causal Analysis
 
-Statistical analyses examining solitary confinement practices in New York State using confidential administrative correctional data. Examples provided focus on evaluating the impact of mandated reforms in the *Peoples v Annucci* Legal Settlement.
+Statistical analyses examining solitary confinement practices in New York State using confidential administrative correctional data. Examples provided focus on evaluating the impact of mandated reforms in the *Peoples v Annucci* legal settlement.
 
 ### Methods 
 - Generalized Linear Models & Nonparametric Regression 
