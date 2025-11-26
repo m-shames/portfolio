@@ -32,27 +32,23 @@ Statistical analyses examining solitary confinement practices in New York State 
 
 *Note: Uses synthetic data due to confidentiality of actual correctional records*
 -->
-
 ---
 
 ## Policy Analysis
 
 ### Technical Report
 
-**"Boxed In: The True Cost of Extreme Isolation in New York's Prisons"**  
-Shames, M. & Desgranges, P. *New York Civil Liberties Union* (2019)
-[View report](https://www.nyclu.org/uploads/2019/10/201910_nyclu_solitary_web.pdf). 
+Shames, M., & Desgranges, P. (2019). **Trapped inside: The past, present, and future of solitary confinement in New York.** New York, NY: New York Civil Liberties Union.    
 
 Comparative analysis of NYS DOCCS Regulations and HALT Act requirements.   
-*Role: Conducted all quantitative analyses and created data visualizations; report written in collaboration with Phil Desgranges, Esq.*
+*Role: Conducted all quantitative analyses and created data visualizations; report written in collaboration with Phil Desgranges, Esq.*  
+[View report](https://www.nyclu.org/uploads/2019/10/201910_nyclu_solitary_web.pdf).   
 
 ### Academic Publication
-
-**"Conditions of Confinement Litigation"**  
-Shames, M. *Oxford Research Encyclopedia of Criminology and Criminal Justice* (2025)
+Shames, M. (2025). **Conditions of confinement litigation**. In H. Pontell (Ed.), *Oxford Research Encyclopedia of Criminology and Criminal Justice*. Oxford University Press. doi.org/10.1093/acrefore/9780190264079.013.877
 
 Invited article reviewing conditions of confinement litigation from a social scientific perspective.  
-[View abstract](https://doi.org/10.1093/acrefore/9780190264079.013.877) | [See example code & visualizations](https://github.com/m-shames/conditions-of-confinement.git)
+[View article](https://doi.org/10.1093/acrefore/9780190264079.013.877) | [See example code & visualizations](https://github.com/m-shames/conditions-of-confinement)
 
 ---
 
