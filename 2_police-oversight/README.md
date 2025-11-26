@@ -1,18 +1,29 @@
 
 # Police Oversight Research
+Evaluation of Chicago Civilian Review Board (CRB) reforms and their impact on complaint 
+investigation and disciplinary outcomes. 
 
-Evaluation of Chicago's civilian review board reforms using interrupted time series analyses
-to measure impacts on complaint substantiation rates and disciplinary outcomes. 
- using FOIA data
+## Background
+In 2017, Chicago implemented reforms aimed at strengthening independent police oversight, 
+including changes to the Civilian Office of Police Accountability (COPA) and the Police Board's authority over disciplinary decisions.
+
+## Objective & Research Questions 
+This dissertation research examined:
+1. Whether Chicago's civilian oversight reforms causally impacted complaint substantiation rates, disciplinary recommendations, and CPD implementation of CRB recommendations.
+2. Whether reforms reduced racial disparities in police misconduct case outcomes.
+3. Methodological approaches for causal inference in settings with universal policy compliance and no control group.
 
 <!-- 
-## Objective
-What was the goal of this analysis?
+## DATA
+- Public CRB Data [available here]()
+- FOIA data, a sample of which is [available here]()
+-->
 
 ## Methods
-- Tools used: R/Python/SQL
-- Statistical techniques: [e.g., regression, causal inference]
+- **Tools used**: R; SQL; ArcGIS
+- **Statistical techniques**: Logistic regression; nonparametric interrupted time series; predictive modeling generated counterfactual outcomes (PMGCO)
 
+<!-- 
 ## Key Findings
 1-2 sentences on what you found
 
@@ -21,5 +32,4 @@ See [analysis.R](./analysis.R) for full code
 
 ## Visualizations
 ![Description](./outputs/figure1.png)
-
 -->
