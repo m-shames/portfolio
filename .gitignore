@@ -1,14 +1,16 @@
 # =========================
-# Additional ignore
+# Additional Ignore
 # =========================
 
-## README HTML previews
+## HTML previews
 *README*.html
 
 ## Raw data files
 *.rda
 *.rds
 
+## macOS hidden files
+.DS_Store
 # =========================
 # Template Ignore
 # =========================
