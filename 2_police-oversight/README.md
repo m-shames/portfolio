@@ -1,10 +1,11 @@
+
 # Police Oversight Research
 
 Evaluation of Chicago's civilian review board reforms using interrupted time series analyses
 to measure impacts on complaint substantiation rates and disciplinary outcomes. 
  using FOIA data
- 
 
+<!-- 
 ## Objective
 What was the goal of this analysis?
 
@@ -20,3 +21,5 @@ See [analysis.R](./analysis.R) for full code
 
 ## Visualizations
 ![Description](./outputs/figure1.png)
+
+-->
