@@ -2,6 +2,18 @@
 
 Overview of my quantitative work on solitary confinement practices, policies, and reforms.
 
+## Statistical & Causal Analysis
+
+Statistical analyses examining solitary confinement practices and reform impacts using confidential administrative correctional data.  
+
+**Methods used:**  
+- GLMs & Nonparametric Regression 
+- Regression Discontinuity in Time (RDiT)   
+- Network analysis  
+- Machine learning predictive modeling (random forests & neural networks)    
+
+**Example code & outputs:** Sample code and visualizations coming soon.  
+
 ## Policy Analysis
 
 ### Technical Report
@@ -17,18 +29,6 @@ perspective. Published in *Oxford Research Encyclopedia of Criminology and Crimi
 
 **Example code & outputs:** Code and visualizations from encyclopedia article are available 
 in a [separate repository here](https://github.com/m-shames/conditions-of-confinement.git).
-
-## Statistical & Causal Analysis
-
-Statistical analyses examining solitary confinement practices and reform impacts using confidential administrative correctional data.  
-
-**Methods used:**  
-- GLMs & Nonparametric Regression 
-- Regression Discontinuity in Time (RDiT)   
-- Network analysis  
-- Machine learning predictive modeling (random forests & neural networks)    
-
-**Example code & outputs:** Sample code and visualizations coming soon.  
 
 ## Litigation Support & Monitoring
 
