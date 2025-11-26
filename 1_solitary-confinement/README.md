@@ -6,7 +6,7 @@ Quantitative research on solitary confinement practices, policies, and reforms u
 
 ## Statistical & Causal Analysis
 
-Statistical analyses examining solitary confinement practices in New York State using confidential administrative correctional data. Examples provided focus on evaluating the impact of mandated reforms in the *Peoples V Annucci* Legal Settlement.
+Statistical analyses examining solitary confinement practices in New York State using confidential administrative correctional data. Examples provided focus on evaluating the impact of mandated reforms in the *Peoples v Annucci* Legal Settlement.
 
 ### Methods 
 - Generalized Linear Models & Nonparametric Regression 
@@ -68,8 +68,9 @@ Provided statistical analysis and data monitoring for civil rights litigation ch
 
 **Deliverables include:**  
 - *V.W. v. Conway*, 236 F. Supp. 3d 554 (N.D.N.Y. 2017)
-  - Shames Decl. in Support of Motions for Class Certification & Preliminary Injunction
-  - Shames Decl. in Opposition to Motion for Summary Judgement 
+  - Shames Decl. in Support of Pltfs' Mtn for Class Certification
+  - Shames Decl. in Support of Pltfs' Mtn for Preliminary Injunction
+  - Shames Decl. in Opposition to Motion for Summary Judgment 
 
 - *Peoples v. Fischer* (*Peoples v. Annucci*), No. 11-CV-2694 (S.D.N.Y.)
   - Annual joint status reports on settlement implementation
