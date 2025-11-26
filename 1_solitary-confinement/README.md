@@ -2,19 +2,6 @@
 
 Overview of my quantitative work on solitary confinement practices, policies, and reforms.
 
-## Litigation Support & Monitoring
-
-Provided statistical analysis and data monitoring for civil rights litigation 
-challenging solitary confinement practices in New York State. Work included: 
-settlement compliance monitoring and reporting; data quality assessments and validation; 
-annual presentations to NYS DOCCS leadership. 
-
-**Deliverables include:**  
-- *V.W. v. Conway*, 236 F. Supp. 3d 554 (N.D.N.Y. 2017): Shames Decl. in Supp. of Motions for Class Cert. & Preliminary Injunction  
-- *Peoples v. Fischer* (*Peoples v. Annucci*), No. 11-CV-2694 (S.D.N.Y.): Annual joint status reports on settlement agreement implementation progress
-
-*Note: Case details and underlying data are confidential.*  
-
 ## Policy Analysis
 
 ### Technical Report
@@ -42,3 +29,16 @@ Statistical analyses examining solitary confinement practices and reform impacts
 - Machine learning predictive modeling (random forests & neural networks)    
 
 **Example code & outputs:** Sample code and visualizations coming soon.  
+
+## Litigation Support & Monitoring
+
+Provided statistical analysis and data monitoring for civil rights litigation 
+challenging solitary confinement practices in New York State. Work included: 
+settlement compliance monitoring and reporting; data quality assessments and validation; 
+annual presentations to NYS DOCCS leadership. 
+
+**Deliverables include:**  
+- *V.W. v. Conway*, 236 F. Supp. 3d 554 (N.D.N.Y. 2017): Shames Decl. in Supp. of Motions for Class Cert. & Preliminary Injunction  
+- *Peoples v. Fischer* (*Peoples v. Annucci*), No. 11-CV-2694 (S.D.N.Y.): Annual joint status reports on settlement agreement implementation progress
+
+*Note: Case details and underlying data are confidential.*  
