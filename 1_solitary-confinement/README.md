@@ -16,7 +16,7 @@ perspective. Published in *Oxford Research Encyclopedia of Criminology and Crimi
 2025. [Abstract available here](https://doi.org/10.1093/acrefore/9780190264079.013.877), full article available upon request.
 
 **Example code & outputs:** Code and visualizations from encyclopedia article are available 
-in a [separate repository here](link-to-other-repo-when-you-make-it).
+in a [separate repository here](https://github.com/m-shames/conditions-of-confinement.git).
 
 ## Statistical & Causal Analysis
 
