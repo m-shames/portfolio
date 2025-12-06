@@ -5,6 +5,12 @@ This repo provides information about and documentation from select research I've
 
 ## Navigation
 
+  1. Policy Analysis
+  2. Litigation Support & Monitoring
+  3. Statistical & Causal Analysis  
+  
+----
+
 ### 1. Policy Analysis
 
 #### Technical Report
@@ -19,6 +25,7 @@ This repo provides information about and documentation from select research I've
 *Oxford Research Encyclopedia of Criminology and Criminal Justice*. Oxford University Press. [Invited encyclopedia article reviewing conditions of confinement litigation from a social scientific perspective.]  
 [→ View code & visualizations](https://github.com/m-shames/conditions-of-confinement)
 
+----
 
 ### 2. Litigation Support & Monitoring
 
@@ -41,6 +48,7 @@ Provided statistical analysis and data monitoring for civil rights litigation ch
 
   - Annual joint status reports on settlement implementation
     
+----
 
 ### 3. Statistical & Causal Analysis
 
