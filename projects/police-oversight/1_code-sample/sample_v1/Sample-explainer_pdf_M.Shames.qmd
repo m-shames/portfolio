@@ -1,5 +1,5 @@
 ---
-title: "MShames Code Sample Explainer"
+title: "Code Sample Explainer"
 subtitle: "Michelle Shames"
 format:
   pdf:
@@ -44,8 +44,6 @@ In 2017, Chicago implemented a series of reforms aimed at strengthening civilian
 1. Did Chicago's civilian oversight reforms causally impact complaint substantiation rates, disciplinary recommendations, and CPD implementation of CRB recommendations?    
 2. Did the reforms reduce racial disparities in police misconduct investigation outcomes?    
 
-Parts of this project are also used as a case study to investigate whether a novel use of ML, which I term PMGCOs, is more suitable for causal research than traditional designs like DiD and RDD in policy evaluation settings with universal compliance and no viable control group.
-
 ## Methods & Findings
 ```{r}
 #| label: sample-n
@@ -56,10 +54,7 @@ sample_n <- 26000
 
 This analysis uses a database of `r scales::comma(sample_n)` misconduct complaints I built by acquiring and integrating public and FOIA data from law enforcement, civilian oversight agencies, and the U.S. Census Bureau. ***Further documentation and code related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight).*** 
 
-:::{.callout-warning collapse=true}
-## Disclaimer 
-This research is ongoing and the public repo may not represent current findings. Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
-:::  
+**Disclaimer**: This research is ongoing and the public repo may not represent current findings. Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
 
 \begin{center}
 Last modified: Dec 05, 2025 
