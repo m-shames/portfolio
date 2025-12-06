@@ -1,10 +1,11 @@
-# Research Portfolio
-This repository contains examples of my quantitative research and data analysis work.
+# Repo Overview
+This repository contains background information, data, code, analysis, and visualization excerpts from select 
+past and ongoing research projects.
 
 ## Projects
 
-### [1. Solitary Confinement](./1_solitary-confinement/)
-Research supporting impact litigation and policy reform, including settlement monitoring, policy analysis, and causal inference evaluations of reform impacts.
+### [Police Oversight](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight): 
+ Includes background information and sample code & visualizations from my dissertation research.
 
-### [2. Police Oversight](./2_police-oversight/)
-Evaluation of Chicago Civilian Review Board reforms and their impact on complaint investigation and disciplinary outcomes using interrupted time series analysis.
+### [Solitary Confinement](https://github.com/m-shames/portfolio/tree/main/projects/solitary-confinement): 
+ Includes information about multiple projects I've conducted related to solitary confinement. 
