@@ -54,7 +54,7 @@ Parts of this project are also used as a case study to investigate whether a nov
 sample_n <- 26000 
 ```
 
-This analysis uses a database of `r scales::comma(sample_n)` misconduct complaints I built by acquiring and integrating public and FOIA data from law enforcement, civilian oversight agencies, and the U.S. Census Bureau. Further documentation and code related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight). 
+This analysis uses a database of `r scales::comma(sample_n)` misconduct complaints I built by acquiring and integrating public and FOIA data from law enforcement, civilian oversight agencies, and the U.S. Census Bureau. ***Further documentation and code related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight).*** 
 
 :::{.callout-warning collapse=true}
 ## Disclaimer 
