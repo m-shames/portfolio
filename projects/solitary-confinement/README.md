@@ -63,7 +63,7 @@ evaluating the impact of mandated sentencing guideline reforms in the *Peoples v
 - Network analysis    
 - Machine learning (random forests & neural networks)      
 
-**Example code & outputs:** Sample code and visualizations coming soon.    
+**Sample code & visualizations coming soon.**    
 
 <!-- 
 ### Code Examples
