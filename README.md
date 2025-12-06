@@ -1,7 +1,9 @@
 # Repo Overview
 Welcome to my public portfolio. This repository contains information from my Curriculum Vitae, 
 as well as background information, data, code, analysis, and visualization excerpts from select 
-past and ongoing research projects. Sample code for job applications can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight/1_code-sample).
+past and ongoing research projects.   
+
+**Sample code for job applications can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight/1_code-sample).**
 
 ## Navigation
 
