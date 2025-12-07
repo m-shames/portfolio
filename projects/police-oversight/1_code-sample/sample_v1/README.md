@@ -1,36 +1,45 @@
 # Navigation
-This repo contains my code sample, and code sample cover letter (explainer) in various formats.
+This folder contains
+- code sample cover letter (explainer) in various formats
+- ETL pipeline using R and Google BigQuery
 
+## Code Files
 - **[`1_bigquery_copa_extract.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/1_bigquery_copa_extract.R)**:
-Big query code for extracting FOIA data.
-- **[`2_copa_ETL.R`]()**: Prep & merge:
-  1. CPD misconduct data (from 2 databases);
-  2. COPA complaint data (from 2 databases);
-  3. ACS data
+  Extract FOIA data from BigQuery cloud data warehouse
+- **[`2_copa_ETL.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/2_copa_ETL.R)**:
+Prep & merge datasets:
+  - CPD misconduct data (from 2 databases)
+  - COPA complaint data (from 2 databases)
+  - ACS demographic data
 
 # About the Code Sample
-
-### Background
 For part of my dissertation, I evaluated Chicago Civilian Review Board (CRB) reforms and 
-their impact on misconduct complaint investigation findings and officer discipline.
-In this document, I provide a brief overview of the project and indicate where additional 
-information can be found. The code sample corresponding to this document consists of excerpts 
-from various stages of this project. Further code will happily be provided upon request.  
+their impact on misconduct complaint investigation findings and officer discipline. 
+The code sample herein consists of excerpts from various stages of this project. Further code will happily be provided upon request.  
 
 *Please note, some outputs are suppressed or may not run due to private storage of confidential data.*    
 
 ### Project Background & Research Objectives 
-In 2017, Chicago implemented a series of reforms aimed at strengthening civilian review and independent oversight of the Chicago Police Department (CPD). The reforms centered around the launch of the Civilian Office of Police Accountability (COPA), which replaced Chicago's former CRB agency (IPRA). Both agencies investigated allegations of CPD misconduct, but COPA was given greater resources, jurisdiction, and independence from the CPD than its predecessor agency. While anecdotal evidence indicates that complaints are being sustained at a higher rate since COPA's launch, no empirical research has indicating whether this increase can be attributed to the reforms themselves. Even less research has been conducted on patterns of officer discipline.  
+In 2017, Chicago implemented a series of reforms aimed at strengthening civilian 
+review and independent oversight of the Chicago Police Department (CPD). 
+The reforms centered around the launch of the Civilian Office of Police Accountability 
+(COPA), which replaced Chicago's former CRB agency (IPRA). Both agencies investigated 
+allegations of CPD misconduct, but COPA was given greater resources, jurisdiction, 
+and independence from the CPD than its predecessor agency. While anecdotal evidence 
+indicates that complaints are being sustained at a higher rate since COPA's launch, 
+no empirical research has indicating whether this increase can be attributed to the 
+reforms themselves. Even less research has been conducted on patterns of officer discipline.  
 
 **Guided by these research gaps, this project answers two primary questions:**  
 1. Did Chicago's civilian oversight reforms causally impact complaint substantiation rates, disciplinary recommendations, and CPD implementation of CRB recommendations?    
 2. Did the reforms reduce racial disparities in police misconduct investigation outcomes?    
 
 ### Methods & Findings
-This analysis uses a database of 26,000 misconduct complaints I built by acquiring and integrating public and FOIA data from law enforcement, civilian oversight agencies, and the U.S. Census Bureau. ***Further documentation and code related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight).*** 
+This analysis uses a database of 26,000 misconduct complaints I built by acquiring 
+and integrating public and FOIA data from law enforcement, civilian oversight agencies, 
+and the U.S. Census Bureau. 
 
-**Disclaimer**: This research is ongoing and the public repo may not represent current findings. Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
+***Further documentation and code related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight).*** 
 
-\begin{center}
-Last modified: Dec 05, 2025 
-\end{center}
+**Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
+Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
