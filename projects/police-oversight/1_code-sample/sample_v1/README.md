@@ -1,6 +1,13 @@
 # Navigation
 This repo contains my code sample, and code sample cover letter (explainer) in various formats.
 
+- **[`1_bigquery_copa_extract.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/1_bigquery_copa_extract.R)**:
+Big query code for extracting FOIA data.
+- **[`2_copa_ETL.R`]()**: Prep & merge:
+  1. CPD misconduct data (from 2 databases);
+  2. COPA complaint data (from 2 databases);
+  3. ACS data
+
 # About the Code Sample
 
 ### Background
