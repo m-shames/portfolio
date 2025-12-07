@@ -1,6 +1,6 @@
 # Navigation
-This folder contains
-- code sample cover letter (explainer) in various formats
+This folder contains:
+- Code sample cover letter (explainer) in various formats
 - ETL pipeline using R and Google BigQuery
 
 ## Code Files
@@ -17,7 +17,7 @@ For part of my dissertation, I evaluated Chicago Civilian Review Board (CRB) ref
 their impact on misconduct complaint investigation findings and officer discipline. 
 The code sample herein consists of excerpts from various stages of this project. Further code will happily be provided upon request.  
 
-*Please note, some outputs are suppressed or may not run due to private storage of confidential data.*    
+*Please note: some outputs are suppressed or may not run due to private storage of confidential data.*    
 
 ### Project Background & Research Objectives 
 In 2017, Chicago implemented a series of reforms aimed at strengthening civilian 

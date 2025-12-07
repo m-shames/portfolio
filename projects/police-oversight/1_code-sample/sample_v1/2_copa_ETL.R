@@ -16,6 +16,10 @@ library(janitor)
 ## load data ----
 load(here("a_data/1_og_data/COPA_Corners/df.misconduct_clear.rds"))
 load(here("a_data/1_og_data/COPA_Corners/df.misconduct_cms.rds"))
+
+load(here("a_data/1_og_data/COPA_Corners/df.complainants_clear.rds"))
+load(here("a_data/1_og_data/COPA_Corners/df.complainants_cms.rds"))
+
 load(here("a_data/1_og_data/ACS/beats_census_data.rds"))
 
 # 1. MERGE MISCONDUCT DFs ------------------------------------------------------
@@ -90,7 +94,7 @@ print(missing_data_summary)
 # [***Excerpt of variable cleaning for sample brevity***]
 
 ### ✅️ ️CPD beats ----
-#add zeroz 
+# Add leading zeros to standardize beat IDs
 df.misconduct_combined <- df.misconduct_combined %>%
   mutate(
     beat_clean = case_when(
@@ -143,9 +147,28 @@ save(df.misconduct_combined, file = here("a_data/2.2_cleaning_FOIA/V2/1_df.misco
 # 2. MERGE COMPLAINT DFs -------------------------------------------------------
 # [***Omitted for sample brevity***]
 
-# 3. MERGE COMPLAINT & ACS -----------------------------------------------------
+## 2.5 Merge cleaned vectors together ----
+v.complainant_atts <- v.complainants_race %>%
+  left_join(v.complainants_sex, by = "c_record_id") %>%
+  left_join(v.complainants_role, by = "c_record_id") %>%
+  left_join(v.n_complainants, by = "c_record_id")
 
-## 3.1 Prep ----
+# 3. MERGE MISCONDUCT + COMPLAINTS + ACS -----------------------------------------------------
+
+## 3.1 Merge misconduct + complaints ----
+df.foia_merged <- df.misconduct_combined %>%
+  left_join(v.complainant_atts, by = c("record_id" = "c_record_id"))
+
+# Validate merge: 
+# --> only 40 cases missing complainant info
+df.foia_merged %>% 
+  count(is.na(n_complainants))
+
+df.foia_merged %>% 
+  filter(is.na(n_complainants)) %>% 
+  count(year_filed)
+
+## 3.2 Prep ACS data ----
 # [***Excerpt of variable cleaning for sample brevity***]
 cpd_beats_acs %>% 
   skimr::skim_without_charts()
@@ -155,10 +178,9 @@ cpd_beats_acs <- cpd_beats_acs %>%
   rename_with(~ paste0("acs_", .)) %>% 
   mutate(acs_year = as.factor(acs_year))
 
-## 3.2 Merge complaints + ACS -----------------------------------------------------------
-
+## 3.3 Merge complaints + ACS -----------------------------------------------------------
 df.foia_merged <- df.foia_merged %>%  
   left_join(cpd_beats_acs, by = c("beat_clean" = "acs_beat_id", "year_filed" = "acs_year"))
 
 ## SAVE ----
-save(df.foia_merged, file = here("a_data/2.2_cleaning_FOIA/V2/3.2_df.foia_merged.rds"))
+save(df.foia_merged, file = here("a_data/2.2_cleaning_FOIA/V2/2_df.foia_merged.rds"))
