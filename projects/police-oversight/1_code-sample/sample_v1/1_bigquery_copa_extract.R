@@ -5,6 +5,14 @@
 # Author: Michelle Shames
 # ==============================================================================
 
+# CODE SAMPLE CONTEXT ----------------------------------------------------------
+
+# Original FOIA data used for this project was stored in private Google 
+# BigQuery database within n3-main, a Google Cloud project.
+
+# This script consists of steps taken to authenticate with Google Cloud,
+# access the BigQuery database, query the data of interest, and store it locally.
+
 # 1. SETUP ---------------------------------------------------------------------
 
 ## load packages ----

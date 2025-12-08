@@ -1,11 +1,27 @@
 # ==============================================================================
-# DF MERGING
+# ETL - DF MERGING
 # Proj: COPA Eval
 
 # Author: Michelle Shames
 # ==============================================================================
 
-# SETUP ---------------------------------------------------------------------
+# CODE SAMPLE CONTEXT ----------------------------------------------------------
+
+# This script is an excerpt of the ETL process that was used to create the database 
+# of COPA complaints that was analyzed in this project. 
+
+# A total of five files were merged. This process involved:
+#   - loading & reviewing the original data
+#   - selecting variables of interest & standardizing them across datasets
+#   - joining datasets & performing quality checks to ensure merges were successful
+
+# ETL phases in this script:
+#  1) CPD misconduct data from 2 time periods/different databases were merged
+#  2) COPA complaint data from 2 time periods/different databases were merged
+#  3) Combined the merged misconduct & complaint dataframes (DFs) into single FOIA dataset
+#  4) Appended ACS demographic data by incident year & beat
+
+# SETUP ------------------------------------------------------------------------
 
 ## load packages ----
 library(tidyverse)
@@ -20,9 +36,9 @@ load(here("a_data/1_og_data/COPA_Corners/df.misconduct_cms.rds"))
 load(here("a_data/1_og_data/COPA_Corners/df.complainants_clear.rds"))
 load(here("a_data/1_og_data/COPA_Corners/df.complainants_cms.rds"))
 
-load(here("a_data/1_og_data/ACS/beats_census_data.rds"))
+load(here("a_data/1_og_data/ACS/beats_acs_data.rds"))
 
-# 1. MERGE MISCONDUCT DFs ------------------------------------------------------
+# 1. MERGE 2 MISCONDUCT DFs ------------------------------------------------------
 
 ## 1.1 Compare Dataset Structures ----
 
@@ -144,43 +160,68 @@ df.misconduct_combined <- df.misconduct_combined %>%
 ## 1.6 SAVE ----
 save(df.misconduct_combined, file = here("a_data/2.2_cleaning_FOIA/V2/1_df.misconduct_combined.rds"))
 
-# 2. MERGE COMPLAINT DFs -------------------------------------------------------
-# [***Omitted for sample brevity***]
+# 2. MERGE 2 COMPLAINT DFs -------------------------------------------------------
+## [*** Steps similar to section 1; omitted for sample brevity***]
 
-## 2.5 Merge cleaned vectors together ----
-v.complainant_atts <- v.complainants_race %>%
+# 3. MERGE MISCONDUCT & COMPLAINTS ---------------------------------------------
+
+## 3.1 Prep complainant attributes ----
+# [***Excerpt of variable cleaning for sample brevity***]
+
+### create vector for number of complainants associated w a distinct complaint ----
+v.n_complainants <- df.complainants_combined %>%
+  count(c_record_id, name = "n_complainants")
+
+### Merge cleaned vectors of complainant attributes ----
+df.complainant_atts <- v.complainants_race %>%
   left_join(v.complainants_sex, by = "c_record_id") %>%
   left_join(v.complainants_role, by = "c_record_id") %>%
   left_join(v.n_complainants, by = "c_record_id")
 
-# 3. MERGE MISCONDUCT + COMPLAINTS + ACS -----------------------------------------------------
-
-## 3.1 Merge misconduct + complaints ----
+## 3.2 Merge misconduct + complainant data = all FOIA data ----
 df.foia_merged <- df.misconduct_combined %>%
-  left_join(v.complainant_atts, by = c("record_id" = "c_record_id"))
+  left_join(df.complainant_atts, by = c("record_id" = "c_record_id"))
 
-# Validate merge: 
+## 3.3 Validate merge ----
 # --> only 40 cases missing complainant info
 df.foia_merged %>% 
   count(is.na(n_complainants))
 
+# check distribution of missing info by year
 df.foia_merged %>% 
   filter(is.na(n_complainants)) %>% 
   count(year_filed)
 
-## 3.2 Prep ACS data ----
-# [***Excerpt of variable cleaning for sample brevity***]
-cpd_beats_acs %>% 
+## 3.4 SAVE ----
+save(df.foia_merge, file = here("a_data/2.2_cleaning_FOIA/V2/3_df.foia_merge.rds"))
+
+# 4. MERGE FOIA & ACS ----------------------------------------------------------
+
+## 4.1 Prep ACS data ----
+
+beats_acs_data %>% 
   skimr::skim_without_charts()
 
-# Rename all columns to add "acs_" prefix
-cpd_beats_acs <- cpd_beats_acs %>%
+# [***Excerpt for sample brevity***]
+
+### Rename all columns to add "acs_" prefix ----
+# (done to simplify selecting ACS variables in modeling process)
+cpd_beats_acs <- beats_acs_data %>%
   rename_with(~ paste0("acs_", .)) %>% 
   mutate(acs_year = as.factor(acs_year))
 
-## 3.3 Merge complaints + ACS -----------------------------------------------------------
-df.foia_merged <- df.foia_merged %>%  
+## 4.2 Merge FOIA + ACS data by incident beat & year ----
+df.foia_acs_merged <- df.foia_merged %>%  
   left_join(cpd_beats_acs, by = c("beat_clean" = "acs_beat_id", "year_filed" = "acs_year"))
 
-## SAVE ----
-save(df.foia_merged, file = here("a_data/2.2_cleaning_FOIA/V2/2_df.foia_merged.rds"))
+## 4.3 Validate merge ----
+df.foia_acs_merged %>% 
+  count(is.na(acs_pct_bach_deg))
+
+# check distribution of missing ACS info by beat
+df.foia_acs_merged %>% 
+  filter(is.na(acs_pct_bach_deg)) %>% 
+  count(beat_clean)
+
+## 4.4 SAVE ----
+save(df.foia_acs_merged, file = here("a_data/2.2_cleaning_FOIA/V2/4_df.foia_acs_merged.rds"))

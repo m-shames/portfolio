@@ -1,25 +1,23 @@
-# Navigation
+# Navigation & Code Sample Files
 This folder contains:
-- Code sample cover letter (explainer) in various formats
-- ETL pipeline using R and Google BigQuery
-
-## Code Files
+A) Code sample cover letter (explainer) in various formats
+B) Code sample: ETL pipeline using R and Google BigQuery
 - **[`1_bigquery_copa_extract.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/1_bigquery_copa_extract.R)**:
   Extract FOIA data from BigQuery cloud data warehouse
 - **[`2_copa_ETL.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/2_copa_ETL.R)**:
-Prep & merge datasets:
-  - CPD misconduct data (from 2 databases)
-  - COPA complaint data (from 2 databases)
-  - ACS demographic data
+Prep & merge datasets for analysis
 
-# About the Code Sample
+## About the Code Sample
 For part of my dissertation, I evaluated Chicago Civilian Review Board (CRB) reforms and 
-their impact on misconduct complaint investigation findings and officer discipline. 
-The code sample herein consists of excerpts from various stages of this project. Further code will happily be provided upon request.  
+their impact on misconduct complaint investigation outcomes and officer discipline. 
+The code sample provided consists of excerpts from various stages of this project. 
+Further code will happily be provided upon request. *Please note: some outputs are suppressed or may not run due to private storage of confidential data.*    
 
-*Please note: some outputs are suppressed or may not run due to private storage of confidential data.*    
+----
 
-### Project Background & Research Objectives 
+# About the Larger Project
+  
+### Background & Research Objectives 
 In 2017, Chicago implemented a series of reforms aimed at strengthening civilian 
 review and independent oversight of the Chicago Police Department (CPD). 
 The reforms centered around the launch of the Civilian Office of Police Accountability 
@@ -37,9 +35,7 @@ reforms themselves. Even less research has been conducted on patterns of officer
 ### Methods & Findings
 This analysis uses a database of 26,000 misconduct complaints I built by acquiring 
 and integrating public and FOIA data from law enforcement, civilian oversight agencies, 
-and the U.S. Census Bureau. 
+and the U.S. Census Bureau. ***Further documentation related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight).*** 
 
-***Further documentation and code related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight).*** 
-
-**Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
+**⚠️Disclaimer⚠**: This research is ongoing and the public repo may not represent current findings. 
 Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
