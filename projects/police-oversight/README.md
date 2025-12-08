@@ -29,7 +29,7 @@ created using three data sources:
 - FOIA data including CRB's recommendations for each allegation and the final case finding and discipline adopted by the CPD. [I hope to make this data available at a later date.]  
 - Demographic data from the American Community Survey  
 
-### Sample  
+## Sample  
 For the reform evaluation, the complaint sample was limited to:   
 
 - 2013-2021 (last 4 years of IPRA & first 4 years of COPA)  
@@ -38,7 +38,7 @@ For the reform evaluation, the complaint sample was limited to:
 
 This resulted in a final sample of 26,525 unique complaints of misconduct.  
 
-### Outcomes Variables
+## Outcomes Variables
 The outcomes of interest for this project were:  
 
 - CRB's recommended case finding  
@@ -47,24 +47,27 @@ The outcomes of interest for this project were:
 - Final discipline implemented by CPD  
 
 The distribution of CRB's recommended case findings by agency are plotted in the below Figure.
-Code for this figure is available [here]()
+Code for this figure is available [here](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/Code_fig-crb-finding.R)
 
 ![Figure 1](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig_crb_finding.png)
 
-## Methods
-- **Tools used**: R; SQL; ArcGIS
-- **Statistical techniques**: Logistic regression; nonparametric interrupted time series; predictive modeling generated counterfactual outcomes (PMGCO)
+## Research Design
+Multiple analyses have been conducted to answer various aspects of the research questions. These include:  
 
-<!-- 
-## Key Findings
-1-2 sentences on what you found
+- Logistic Regression      
+- Non-parametric Interrupted Time Series  
+- Predictive Modeling Generated Counterfactual Outcomes (PMGCO)  
 
-## Code
-See [analysis.R](./analysis.R) for full code
+Code and result for each of these analyses is available upon request.  
 
-## Visualizations
-![Description](./outputs/figure1.png)
--->
+## Research Findings  
+In terms of the initial research questions guiding this project, this study finds: 
+
+1. No evidence to support the claim that increased sustain rates occurred as a direct result of the COPA reforms.  
+2. Racial disparities in complaint substantiation rates persisted despite the COPA reforms. 
+
+Details about these findings and several other interesting aspects of analysis 
+results are currently being drafted into a manuscript, and are also available upon request.
 
 **⚠️Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
 Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
