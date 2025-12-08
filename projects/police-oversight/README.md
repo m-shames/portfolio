@@ -46,9 +46,10 @@ The outcomes of interest for this project were:
 - Final case finding adopted by CPD  
 - Final discipline implemented by CPD  
 
-The distribution of CRB's recommended case findings by agency are plotted in Figure 1.   
+The distribution of CRB's recommended case findings by agency are plotted in the below Figure.
+Code for this figure is available [here]()
 
-![Figure 1](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/crb_finding_sample.png)
+![Figure 1](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig_crb_finding.png)
 
 ## Methods
 - **Tools used**: R; SQL; ArcGIS
