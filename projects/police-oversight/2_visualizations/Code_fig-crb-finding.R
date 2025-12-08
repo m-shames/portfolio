@@ -1,3 +1,11 @@
+# ==============================================================================
+# Figure of CRB Recommended Finding
+# Proj: COPA Eval
+
+# Author: Michelle Shames
+# ==============================================================================
+
+# Create bar graph ----
 fig_crb_finding <- df.copa_subset %>% 
   mutate(finding_color = case_when(
     is.na(recommended_finding_c2) ~ "Not Investigated",
@@ -9,7 +17,8 @@ fig_crb_finding <- df.copa_subset %>%
   mutate(
     prop = n / sum(n),
     label = scales::percent(prop, accuracy = 0.1),
-    finding_color = factor(finding_color, levels = c("Not Investigated", "Not Sustained", "Sustained"))
+    finding_color = factor(finding_color, 
+                           levels = c("Not Investigated", "Not Sustained", "Sustained"))
   ) %>%
   arrange(agency, desc(finding_color)) %>%  
   ggplot(aes(x = agency, y = n, fill = finding_color)) +
@@ -43,4 +52,6 @@ fig_crb_finding <- df.copa_subset %>%
     legend.text = element_text(size = 4 * 3)
   )
 
-ggsave("fig_crb_finding.png", plot = fig_crb_finding, width = 10, height = 6, dpi = 150)
+# Save bar graph ----
+ggsave("fig_crb_finding.png", 
+       plot = fig_crb_finding, width = 10, height = 6, dpi = 150)
