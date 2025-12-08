@@ -74,8 +74,8 @@ Details about these findings and several other interesting results are currently
 being drafted into a manuscript, and are also available upon request.
 
 <figure id="fig2">
+  <figcaption>Figure 2: Figure 2: Predicted Probability of Recommended Outcome = Sustain</figcaption>
   <img src="2_visualizations/fig2.png" alt="CRB ITS">
-  <figcaption>Figure 2: Predicted Probability of Recommended Outcome = Sustain</figcaption>
 </figure>
 
 ![Figure 2](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig2.png)
