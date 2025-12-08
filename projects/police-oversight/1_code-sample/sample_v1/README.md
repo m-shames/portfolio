@@ -26,10 +26,10 @@ review and independent oversight of the Chicago Police Department (CPD).
 The reforms centered around the launch of the Civilian Office of Police Accountability 
 (COPA), which replaced Chicago's former CRB agency (IPRA). Both agencies investigated 
 allegations of CPD misconduct, but COPA was given greater resources, jurisdiction, 
-and independence from the CPD than its predecessor agency. While anecdotal evidence 
+and independence from the CPD than its predecessor agency. While evidence 
 indicates that complaints are being sustained at a higher rate since COPA's launch, 
-no empirical research has indicating whether this increase can be attributed to the 
-reforms themselves. Even less research has been conducted on patterns of officer discipline.  
+no empirical research has indicating whether this increase can be causally attributed to the 
+reforms themselves.
 
 ### Guided by these research gaps, this project answers two questions:   
 1. Did Chicago's civilian oversight reforms causally impact complaint substantiation rates, disciplinary recommendations, and CPD implementation of CRB recommendations?    
