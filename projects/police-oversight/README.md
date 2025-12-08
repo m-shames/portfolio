@@ -25,9 +25,11 @@ RDD in policy evaluation settings with universal compliance and no viable contro
 ## Data 
 To answer these research questions, a database of misconduct complaint outcomes was
 created using three data sources:  
-- Public complaint data spanning IPRA and COPA [available here](https://data.cityofchicago.org/Public-Safety/COPA-Cases-Summary/mft5-nfa8/about_data)
+- Public complaint data spanning IPRA and COPA ([retrieved here](https://data.cityofchicago.org/Public-Safety/COPA-Cases-Summary/mft5-nfa8/about_data))
 - FOIA data about investigation outcomes and officer discipline
-- Demographic data from the American Community Survey  
+- Demographic data from the American Community Survey    
+
+An excerpt of the ETL pipeline for building the database is available [here](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/2_copa_ETL.R). 
 
 ## Sample  
 For the reform evaluation, the complaint sample was limited to:   
@@ -46,10 +48,10 @@ The outcomes of interest for this project were:
 - Final case finding adopted by CPD  
 - Final discipline implemented by CPD  
 
-The distribution of CRB's recommended case findings by agency are plotted in the below Figure.
+The distribution of CRB's recommended case findings by agency are plotted in Figure 1.
 (Code for this figure is available [here](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/Code_fig-crb-finding.R))
 
-![Figure 1](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig_crb_finding.png)
+![Figure 1](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig1_crb_finding.png)
 
 ## Research Design
 Multiple analyses have been conducted to answer various aspects of the research questions. These include:  
@@ -63,11 +65,17 @@ Code and results for each of these analyses is available upon request.
 ## Research Findings  
 In terms of the initial research questions guiding this project, this study finds: 
 
-1. No evidence that sustain rates increased as a direct result of the COPA reforms.  
-2. Racial disparities in complaint substantiation rates persisted despite the COPA reforms. 
+1. **Causal support** that the **increased sustain rate for CRB's recommended case outcomes**
+may be attributable to the COPA reforms (see Figure 2), but **no evidence that the longer-term increase in sustain rates for final case outcomes**
+was directly caused by the reforms (see Figure 3).    
+2. Racial disparities in complaint substantiation rates persisted in both recommended and final case outcomes despite the COPA reforms (see Figure 4).     
 
 Details about these findings and several other interesting results are currently 
 being drafted into a manuscript, and are also available upon request.
+
+![Figure 2](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig2_crb_rec-outcomes.png)
+![Figure 3](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig3_cpd_final-outcomes.png)
+![Figure 4](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig4_crb_guilty-crace.png)
 
 **⚠️Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
 Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 

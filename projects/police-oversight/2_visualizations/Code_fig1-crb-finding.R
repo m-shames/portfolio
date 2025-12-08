@@ -5,13 +5,24 @@
 # Author: Michelle Shames
 # ==============================================================================
 
-# Create bar graph ----
+# Setup ----
+
+## Load packages
+library(tidyverse)
+library(here)
+library(skimr)
+
+## Load merged FOIA data Subset
+load(here("b_EDA/FOIA_acs_merged/df.copa_subset.rds"))
+
+# Bar Graph  ----
 fig_crb_finding <- df.copa_subset %>% 
   mutate(finding_color = case_when(
     is.na(recommended_finding_c2) ~ "Not Investigated",
     recommended_finding_c2 == "Sustained" ~ "Sustained", 
     recommended_finding_c2 == "Not sustained" ~ "Not Sustained"
   )) %>%
+  # frequency table
   count(agency, finding_color) %>%
   group_by(agency) %>%
   mutate(
@@ -21,8 +32,10 @@ fig_crb_finding <- df.copa_subset %>%
                            levels = c("Not Investigated", "Not Sustained", "Sustained"))
   ) %>%
   arrange(agency, desc(finding_color)) %>%  
+  # bar chart
   ggplot(aes(x = agency, y = n, fill = finding_color)) +
   geom_col() +
+  # percent labels
   geom_label(
     aes(label = label),
     position = position_stack(vjust = 0.5),
@@ -31,14 +44,17 @@ fig_crb_finding <- df.copa_subset %>%
     fill = "white",
     label.size = 0.25
   ) + 
+  # legend
   scale_fill_manual(
     name = "Finding Status",
     values = c("Not Investigated" = "gray50", 
                "Not Sustained" = "lightblue", 
                "Sustained" = "darkblue")
   ) +
+  # y axis
   scale_y_continuous(labels = scales::comma, breaks = seq(0, 15000, 2500)) +
-  labs(
+  # figure labels & theme
+   labs(
     y = " ",
     x = " ",
     title = "Count of Allegations by Agency"
