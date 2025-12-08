@@ -26,7 +26,7 @@ RDD in policy evaluation settings with universal compliance and no viable contro
 To answer these research questions, a database of misconduct complaint outcomes was
 created using three data sources:  
 - Public complaint data spanning IPRA and COPA [available here](https://data.cityofchicago.org/Public-Safety/COPA-Cases-Summary/mft5-nfa8/about_data)
-- FOIA data including CRB's recommendations for each allegation and the final case finding and discipline adopted by the CPD. [I hope to make this data available at a later date.]  
+- FOIA data about investigation outcomes and officer discipline
 - Demographic data from the American Community Survey  
 
 ## Sample  
@@ -47,7 +47,7 @@ The outcomes of interest for this project were:
 - Final discipline implemented by CPD  
 
 The distribution of CRB's recommended case findings by agency are plotted in the below Figure.
-Code for this figure is available [here](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/Code_fig-crb-finding.R)
+(Code for this figure is available [here](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/Code_fig-crb-finding.R))
 
 ![Figure 1](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig_crb_finding.png)
 
@@ -58,16 +58,16 @@ Multiple analyses have been conducted to answer various aspects of the research 
 - Non-parametric Interrupted Time Series  
 - Predictive Modeling Generated Counterfactual Outcomes (PMGCO)  
 
-Code and result for each of these analyses is available upon request.  
+Code and results for each of these analyses is available upon request.  
 
 ## Research Findings  
 In terms of the initial research questions guiding this project, this study finds: 
 
-1. No evidence to support the claim that increased sustain rates occurred as a direct result of the COPA reforms.  
+1. No evidence that sustain rates increased as a direct result of the COPA reforms.  
 2. Racial disparities in complaint substantiation rates persisted despite the COPA reforms. 
 
-Details about these findings and several other interesting aspects of analysis 
-results are currently being drafted into a manuscript, and are also available upon request.
+Details about these findings and several other interesting results are currently 
+being drafted into a manuscript, and are also available upon request.
 
 **⚠️Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
 Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
