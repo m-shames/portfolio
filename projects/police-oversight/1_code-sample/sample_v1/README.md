@@ -1,8 +1,10 @@
 # Navigation & Code Sample Files
-This folder contains:  
-A) Code sample cover letter (explainer) in various formats  
-- `Sample-explainer_*.*`  
-B) Code sample: ETL pipeline using R and Google BigQuery  
+This folder contains:    
+
+**A) Code sample cover letter (explainer) in various formats**  
+- `Sample-explainer_*.*`    
+
+**B) Code sample: ETL pipeline using R and Google BigQuery**  
 - **[`1_bigquery_copa_extract.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/1_bigquery_copa_extract.R)**:
   Extract FOIA data from BigQuery cloud data warehouse
 - **[`2_copa_ETL.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/2_copa_ETL.R)**:
