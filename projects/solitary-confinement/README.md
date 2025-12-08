@@ -23,7 +23,9 @@ This repo provides information about and documentation from select research I've
 #### Academic Publication
 **Shames, M.** (2025). [Conditions of confinement litigation](https://doi.org/10.1093/acrefore/9780190264079.013.877). In H. Pontell (Ed.),
 *Oxford Research Encyclopedia of Criminology and Criminal Justice*. Oxford University Press. [Invited encyclopedia article reviewing conditions of confinement litigation from a social scientific perspective.]  
+<!-- 
 [→ View code & visualizations](https://github.com/m-shames/conditions-of-confinement)
+-->
 
 ----
 
@@ -35,7 +37,7 @@ Provided statistical analysis and data monitoring for civil rights litigation ch
 - Settlement compliance monitoring and reporting  
 - Data quality assessments and validation  
 - Statistical analysis for legal filings  
-- Annual presentations to NYS DOCCS leadership  
+- Data presentations to corrections staff 
 
 **Deliverables include:**  
 *V.W. v. Conway*, 236 F. Supp. 3d 554 (N.D.N.Y. 2017): 
@@ -47,7 +49,9 @@ Provided statistical analysis and data monitoring for civil rights litigation ch
 *Peoples v. Fischer* (*Peoples v. Annucci*), No. 11-CV-2694 (S.D.N.Y.):   
 
   - Annual joint status reports on settlement implementation
-    
+  - "Solitary confinement by the numbers: Settlement compliance in Peoples v Annucci,  
+    data overview anally presented to NY DOCCS leadership (3017-2023)
+
 ----
 
 ### 3. Statistical & Causal Analysis
@@ -81,4 +85,3 @@ evaluating the impact of mandated sentencing guideline reforms in the *Peoples v
 
 *Note: Uses synthetic data due to confidentiality of actual correctional records*
 -->
-
