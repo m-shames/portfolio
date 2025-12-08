@@ -1,5 +1,5 @@
 # Navigation & Code Sample Files
-This folder contains:    
+## This folder contains    
 
 **A) Code sample cover letter (explainer) in various formats**  
 - `Sample-explainer_*.*`    
@@ -31,7 +31,7 @@ indicates that complaints are being sustained at a higher rate since COPA's laun
 no empirical research has indicating whether this increase can be attributed to the 
 reforms themselves. Even less research has been conducted on patterns of officer discipline.  
 
-**Guided by these research gaps, this project answers two primary questions:**  
+### Guided by these research gaps, this project answers two questions:   
 1. Did Chicago's civilian oversight reforms causally impact complaint substantiation rates, disciplinary recommendations, and CPD implementation of CRB recommendations?    
 2. Did the reforms reduce racial disparities in police misconduct investigation outcomes?    
 
@@ -40,5 +40,5 @@ This analysis uses a database of 26,000 misconduct complaints I built by acquiri
 and integrating public and FOIA data from law enforcement, civilian oversight agencies, 
 and the U.S. Census Bureau. ***Further documentation related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight).*** 
 
-**⚠️Disclaimer⚠**: This research is ongoing and the public repo may not represent current findings. 
+**⚠️Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
 Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
