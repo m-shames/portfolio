@@ -48,9 +48,13 @@ The outcomes of interest for this project were:
 - Final case finding adopted by CPD  
 - Final discipline implemented by CPD  
 
-The distribution of CRB's recommended case findings by agency are plotted in Figure 1.
+The distribution of CRB's recommended case findings by agency are plotted in [Figure 1](#fig1).
 (Code for this figure is available [here](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/Code_fig-crb-finding.R))
 
+<figure id="fig1">
+  <figcaption>Figure 1: Distribution of Recommended Case Outcome</figcaption>
+  <img src="2_visualizations/fig1_crb_finding.png" alt="CRB ITS">
+</figure>
 ![Figure 1](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig1_crb_finding.png)
 
 ## Research Design
@@ -66,20 +70,28 @@ Code and results for each of these analyses is available upon request.
 In terms of the initial research questions guiding this project, this study finds: 
 
 1. **Causal support** that the **increased sustain rate for CRB's recommended case outcomes**
-may be attributable to the COPA reforms (see [Figure 2](#fig2),), but **no evidence that the longer-term increase in sustain rates for final case outcomes**
-was directly caused by the reforms (see Figure 3).    
-2. Racial disparities in complaint substantiation rates persisted in both recommended and final case outcomes despite the COPA reforms (see Figure 4).     
+may be attributable to the COPA reforms (see [Figure 2](#fig2)), but **no evidence that the longer-term increase in sustain rates for final case outcomes**
+was directly caused by the reforms (see [Figure 3](#fig3)).    
+2. Racial disparities in complaint substantiation rates persisted in both 
+recommended and final case outcomes despite the COPA reforms (see [Figure 4](#fig4)).     
 
 Details about these findings and several other interesting results are currently 
 being drafted into a manuscript, and are also available upon request.
 
 <figure id="fig2">
-  <figcaption>Figure 2: Figure 2: Predicted Probability of Recommended Outcome = Sustain</figcaption>
+  <figcaption>Figure 2: Predicted Probability of Recommended Outcome = Sustain</figcaption>
   <img src="2_visualizations/fig2.png" alt="CRB ITS">
 </figure>
-
 ![Figure 2](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig2.png)
+<figure id="fig3">
+  <figcaption>Figure 3: Predicted Probability of Final Outcome = Sustain</figcaption>
+  <img src="2_visualizations/fig3.png" alt="CPD ITS">
+</figure>
 ![Figure 3](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig3.png)
+<figure id="fig4">
+  <figcaption>Figure 4: Racial disparities in Sustain Rates</figcaption>
+  <img src="2_visualizations/fig4.png" alt="crace">
+</figure>
 ![Figure 4](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig4.png)
 
 **⚠️Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
