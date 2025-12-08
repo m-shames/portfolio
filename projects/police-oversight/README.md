@@ -72,7 +72,7 @@ In terms of the initial research questions guiding this project, this study find
 may be attributable to the COPA reforms (see [Figure 2](#fig2)), but **no evidence that the longer-term increase in sustain rates for final case outcomes**
 was directly caused by the reforms (see [Figure 3](#fig3)).    
 2. Racial disparities in complaint substantiation rates persisted in both 
-recommended and final case outcomes despite the COPA reforms (see [Figure 4](#fig4)).     
+recommended and final case outcomes despite the COPA reforms (see [Figure 4](#figure-4)).     
 
 Details about these findings and several other interesting results are currently 
 being drafted into a manuscript, and are also available upon request.
@@ -87,9 +87,9 @@ being drafted into a manuscript, and are also available upon request.
   <img src="2_visualizations/fig3.png" alt="CPD ITS">
 </figure>
 
-<figure id="fig4">
-  <figcaption>Figure 4: Racial disparities in Sustain Rates</figcaption>
-  <img src="2_visualizations/fig4.png" alt="crace">
+<figure id="figure-4">
+  <figcaption>Figure 4: Racial Disparities in Sustain Rates</figcaption>
+  <img src="2_visualizations/fig4.png" alt="c-race">
 </figure>
 
 
