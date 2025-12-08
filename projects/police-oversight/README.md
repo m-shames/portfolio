@@ -33,3 +33,6 @@ See [analysis.R](./analysis.R) for full code
 ## Visualizations
 ![Description](./outputs/figure1.png)
 -->
+
+**⚠️Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
+Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 

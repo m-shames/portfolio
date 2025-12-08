@@ -4,7 +4,7 @@
 **A) Code sample cover letter (explainer) in various formats**  
 - `Sample-explainer_*.*`    
 
-**B) Code sample: ETL pipeline using R and Google BigQuery**  
+**B) Code sample: ETL pipeline using Google BigQuery and `R`**  
 - **[`1_bigquery_copa_extract.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/1_bigquery_copa_extract.R)**:
   Extract FOIA data from BigQuery cloud data warehouse
 - **[`2_copa_ETL.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/2_copa_ETL.R)**:
@@ -39,6 +39,3 @@ reforms themselves. Even less research has been conducted on patterns of officer
 This analysis uses a database of 26,000 misconduct complaints I built by acquiring 
 and integrating public and FOIA data from law enforcement, civilian oversight agencies, 
 and the U.S. Census Bureau. ***Further documentation related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight).*** 
-
-**⚠️Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
-Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
