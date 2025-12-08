@@ -73,9 +73,9 @@ was directly caused by the reforms (see Figure 3).
 Details about these findings and several other interesting results are currently 
 being drafted into a manuscript, and are also available upon request.
 
-![Figure 2](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig2_crb_rec-outcomes.png)
-![Figure 3](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig3_cpd_final-outcomes.png)
-![Figure 4](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig4_crb_guilty-crace.png)
+![Figure 2](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig2.png)
+![Figure 3](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig3.png)
+![Figure 4](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig4.png)
 
 **⚠️Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
 Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
