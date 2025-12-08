@@ -49,13 +49,12 @@ The outcomes of interest for this project were:
 - Final discipline implemented by CPD  
 
 The distribution of CRB's recommended case findings by agency are plotted in [Figure 1](#fig1).
-(Code for this figure is available [here](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/Code_fig-crb-finding.R))
+(Code for this figure is available [here](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/Code_fig-crb-finding.R)).  
 
 <figure id="fig1">
-  <figcaption>Figure 1: Distribution of Recommended Case Outcome</figcaption>
+  <figcaption>Figure 1: Distribution of Recommended Case Outcomes</figcaption>
   <img src="2_visualizations/fig1_crb_finding.png" alt="CRB ITS">
 </figure>
-![Figure 1](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig1_crb_finding.png)
 
 ## Research Design
 Multiple analyses have been conducted to answer various aspects of the research questions. These include:  
@@ -82,17 +81,17 @@ being drafted into a manuscript, and are also available upon request.
   <figcaption>Figure 2: Predicted Probability of Recommended Outcome = Sustain</figcaption>
   <img src="2_visualizations/fig2.png" alt="CRB ITS">
 </figure>
-![Figure 2](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig2.png)
+
 <figure id="fig3">
   <figcaption>Figure 3: Predicted Probability of Final Outcome = Sustain</figcaption>
   <img src="2_visualizations/fig3.png" alt="CPD ITS">
 </figure>
-![Figure 3](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig3.png)
+
 <figure id="fig4">
   <figcaption>Figure 4: Racial disparities in Sustain Rates</figcaption>
   <img src="2_visualizations/fig4.png" alt="crace">
 </figure>
-![Figure 4](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig4.png)
+
 
 **⚠️Disclaimer**: This research is ongoing and the public repo may not represent current findings. 
 Upon completion of the project, I hope to share the database of misconduct complaints and an executive summary of my research findings publicly. 
