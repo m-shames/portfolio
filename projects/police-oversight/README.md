@@ -88,7 +88,7 @@ being drafted into a manuscript, and are also available upon request.
 </figure>
 
 <figure id="figure-4">
-  <figcaption>Figure 4: Racial Disparities in Sustain Rates</figcaption>
+  <figcaption>Figure 4: Racial Disparities in CRB Recommended Sustain Rates</figcaption>
   <img src="2_visualizations/fig4.png" alt="c-race">
 </figure>
 
