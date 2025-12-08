@@ -66,12 +66,17 @@ Code and results for each of these analyses is available upon request.
 In terms of the initial research questions guiding this project, this study finds: 
 
 1. **Causal support** that the **increased sustain rate for CRB's recommended case outcomes**
-may be attributable to the COPA reforms (see Figure 2), but **no evidence that the longer-term increase in sustain rates for final case outcomes**
+may be attributable to the COPA reforms (see [Figure 2](#fig2),), but **no evidence that the longer-term increase in sustain rates for final case outcomes**
 was directly caused by the reforms (see Figure 3).    
 2. Racial disparities in complaint substantiation rates persisted in both recommended and final case outcomes despite the COPA reforms (see Figure 4).     
 
 Details about these findings and several other interesting results are currently 
 being drafted into a manuscript, and are also available upon request.
+
+<figure id="fig2">
+  <img src="2_visualizations/fig2.png" alt="CRB ITS">
+  <figcaption>Figure 2: Predicted Probability of Recommended Outcome = Sustain</figcaption>
+</figure>
 
 ![Figure 2](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig2.png)
 ![Figure 3](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/fig3.png)
