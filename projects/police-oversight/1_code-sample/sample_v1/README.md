@@ -1,5 +1,7 @@
-# Navigation & Code Sample Files
-## This folder contains    
+# Code Sample Repository
+![R version 4.4.3](https://img.shields.io/badge/R-4.4.3-blue)    
+
+## Navigation   
 
 **A) Code sample cover letter (explainer) in various formats**  
 - `Sample-explainer_*.*`    
@@ -38,4 +40,17 @@ reforms themselves.
 ### Methods & Findings
 This analysis uses a database of 26,000 misconduct complaints I built by acquiring 
 and integrating public and FOIA data from law enforcement, civilian oversight agencies, 
-and the U.S. Census Bureau. ***Further documentation related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight).*** 
+and the U.S. Census Bureau.  
+
+***Further documentation related to research design, analyses, and findings can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight).***  
+
+----
+
+## License & Usage
+Copyright (c) 2025 Michelle C. Shames
+All Rights Reserved.
+
+This repository is shared for viewing and reference purposes only.
+No permission is granted to use, copy, modify, distribute, or create 
+derivative works from any content in this repository without explicit 
+written permission from the copyright holder.
