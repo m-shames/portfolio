@@ -8,10 +8,11 @@ past and ongoing research projects.
 ## Navigation
 
 ### I. Curriculum Vitae Documents
-- [`CV-pubs_MShames`](https://github.com/m-shames/portfolio/blob/main/CV-pubs_MShames.pdf): 
-List my publications and presentations.  
-- [`CV-leadership_MShames`](): 
+- [`CV-leadership_MShames.pdf`](https://github.com/m-shames/portfolio/blob/main/CV-leadership_MShames.pdf): 
 List my teaching experience and select service/leadership roles.     
+- [`CV-pubs_MShames.pdf`](https://github.com/m-shames/portfolio/blob/main/CV-pubs_MShames.pdf): 
+List my publications and presentations.  
+  
 
 ### II. Select Projects
  - [Police Oversight](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight): 
