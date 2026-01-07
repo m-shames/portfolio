@@ -7,7 +7,7 @@ corrections policy, litigation support, and quantitative analysis.
 
   1. Policy Analysis
   2. Litigation Support & Monitoring
-  3. Statistical & Causal Analysis  
+  3. Quantitative Research 
   
 ----
 
@@ -52,16 +52,22 @@ Provided statistical analyses and data monitoring for civil rights litigation ch
 
 ----
 
-### 3. Statistical & Causal Analysis   
+### 3. Quantitative Research   
 ![R version 4.4.3](https://img.shields.io/badge/R-4.4.3-blue)   
 
+I have extensive experiencing working with confidential administrative data from 
+Departments of Corrections including:  
+  - Writing and managing FOIA request;  
+  - Conducting data-quality assessments;  
+  - De-identifying sensitive datasets;  
+  - Designing and executing exploratory and causal analyses; and
+  - Communicating information to legal, academic, and lay audiences.    
+  
+Excerpts are available upon request from my research evaluating the impact of 
+mandated sentencing guideline reforms in the *Peoples v Annucci* legal settlement.
 
-Excerpt from research examining solitary confinement practices in New York State 
-using confidential administrative correctional data. Examples provided focus on
-evaluating the impact of mandated sentencing guideline reforms in the *Peoples v Annucci* legal settlement.
-*Please note, case details and underlying data are confidential.*  
+Statistical methods used for this project include: 
 
-#### Methods   
 - Generalized Linear Models & Nonparametric Regression   
 - Regression Discontinuity in Time (RDiT)     
 - Network analysis    
@@ -69,6 +75,7 @@ evaluating the impact of mandated sentencing guideline reforms in the *Peoples v
 
 ***Sample code & visualizations coming soon.***    
 
+*Please note, case details and underlying data are confidential.* 
 <!-- 
 ### Code Examples
 
