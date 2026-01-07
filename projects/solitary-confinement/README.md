@@ -1,4 +1,4 @@
-# Solitary Confinement Research Repo
+# Solitary Confinement Research
 This repository provides information about and documentation from select research
 I've conducted related to solitary confinement, with a focus on New York State 
 corrections policy, litigation support, and quantitative analysis.   
@@ -56,28 +56,27 @@ Provided statistical analyses and data monitoring for civil rights litigation ch
 ![R version 4.4.3](https://img.shields.io/badge/R-4.4.3-blue)   
 
 I have extensive experiencing working with confidential administrative data from 
-Departments of Corrections including:  
-  - Writing and managing FOIA request;  
-  - Conducting data-quality assessments;  
-  - De-identifying sensitive datasets;  
-  - Designing and executing exploratory and causal analyses; and
-  - Communicating information to legal, academic, and lay audiences.    
+Departments of Corrections including:   
+
+  - Writing and managing FOIA request    
+  - Conducting data-quality assessments  
+  - De-identifying sensitive datasets    
+  - Designing and executing exploratory and causal analyses   
+  - Communicating information to legal, academic, and lay audiences      
   
 Excerpts are available upon request from my research evaluating the impact of 
 mandated sentencing guideline reforms in the *Peoples v Annucci* legal settlement.
-
 Statistical methods used for this project include: 
 
 - Generalized Linear Models & Nonparametric Regression   
 - Regression Discontinuity in Time (RDiT)     
-- Network analysis    
-- Machine learning (random forests & neural networks)      
-
-***Sample code & visualizations coming soon.***    
+- Network Analysis    
+- Machine Learning (random forests & neural networks)      
 
 *Please note, case details and underlying data are confidential.* 
 <!-- 
 ### Code Examples
+***Sample code & visualizations coming soon.***  
 
 **[View sample analysis code →](./code/)**
 - Data cleaning and ETL pipeline
