@@ -1,12 +1,11 @@
 # Police Oversight Research  
-This project evaluates the impact of Chicago Civilian Review Board (CRB) reforms implemented in 2017 on misconduct investigation outcomes and police officer discipline. 
+As part of my dissertation research, this project evaluates the impact of Chicago Civilian Review Board (CRB) reforms implemented in 2017 on misconduct investigation outcomes and police officer discipline. 
 
 ### Key Findings
-My dissertation research provides **causal evidence** that Chicago's 2017 CRB reforms:
 
-- **Increased allegation substantiation rates** among civilian complaints reviewed post-reform (statistically significant)    
-- **Racial disparities persisted** in substantiation rates post-reforms (statistically significant)    
-- **No causal evidence that the 2017 reforms impacted final case outcomes and disciplinary decisions** made by Chicago Police Department (CPD) leadership
+- Causal evidence that **CRB allegation substantiation rates increased** for civilian complaints reviewed post-reform (statistically significant).    
+- Statistical evidence that **racial disparities in substantiation rates persisted post-reforms** (statistically significant).   
+- **No causal evidence that the 2017 reforms impacted** ***final*** **case or disciplinary outcomes** implemented by the Chicago Police Department.  
 
 [View detailed project overview below ↓](#project-overview)
 
@@ -14,20 +13,20 @@ My dissertation research provides **causal evidence** that Chicago's 2017 CRB re
 
 # Data & Code
 
-### Available in this repository 
+### Available in this repository: 
 
-**ETL pipeline for building complaint database:**
+**ETL pipeline for building complaint database**
 
   - [`1_bigquery_copa_extract.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/1_bigquery_copa_extract.R):
   Extract FOIA data from BigQuery cloud data warehouse
   - [`2_copa_ETL.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/2_copa_ETL.R):
 Prep and merge datasets for analysis
 
-**Visualizations:**  
+**Visualizations**  
 
-  - [`Code_fig1_crb_finding.R`](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight/2_visualizations/Code_fig1_crb_finding.R): Code for readme, Figure 1.  
+  - [`Code_fig1-crb-finding.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/Code_fig1-crb-finding.R): Code for [Figure 1](#fig1).  
 
-### Available upon request 
+### Available upon request: 
 
 - Complete modeling and analyses code (logistic regression, interrupted time series, machine learning)
 - Detailed results and robustness checks
@@ -37,7 +36,7 @@ Prep and merge datasets for analysis
 
 # Project Overview
 
-### Background 
+## Background 
 In 2017, Chicago implemented a series of reforms aimed at strengthening civilian 
 review and independent oversight of the Chicago Police Department (CPD). 
 The reforms centered around the launch of the Civilian Office of Police Accountability 
@@ -48,7 +47,7 @@ indicates that complaints are being sustained at higher rates since COPA's launc
 no empirical research has established whether this increase can be causally attributed to the 
 reforms themselves.
 
-### Research Questions
+## Research Questions
 This project answers two primary questions:  
 
 1. Did Chicago's civilian oversight reforms causally impact complaint substantiation rates, 
@@ -60,7 +59,7 @@ Parts of this project also explore whether Predictive Modeling Generated Counter
 a novel machine learning approach I am developing for generating synthetic controls, is more suitable 
 for causal inference than traditional designs (DiD, RDD) in policy evaluations with universal compliance and no control group.
 
-### Data Sources
+## Data Sources
 I built a comprehensive database of civilian complaint investigation outcomes using:  
 
 - Public complaint data spanning IPRA and COPA ([retrieved here](https://data.cityofchicago.org/Public-Safety/COPA-Cases-Summary/mft5-nfa8/about_data))
@@ -69,16 +68,16 @@ I built a comprehensive database of civilian complaint investigation outcomes us
 
 View ETL pipeline code [here](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/2_copa_ETL.R). 
 
-### Sample  
+## Sample  
 The complaint sample was limited to:   
 
 - **Time period:** 2013-2021 (last 4 years of IPRA & first 4 years of COPA)  
 - **Complainant:** Filed by a civilian (not another CPD officer)    
 - **Location:** Alleged misconduct occurred within CPD jurisdiction, excluding O'Hare Airport   
 
-**Final Sample:** 26,525 unique misconduct complaints
+**Final Sample:** 26,525 unique police misconduct allegations
 
-### Outcome Variables
+## Outcome Variables
 The outcomes of interest for this project were:  
 
 - CRB's recommended case finding  
@@ -89,12 +88,15 @@ The outcomes of interest for this project were:
 The distribution of CRB's recommended case findings by agency are plotted in [Figure 1](#fig1).
 (Code for this figure is available [here](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/2_visualizations/Code_fig1-crb-finding.R)).  
 
-<figure id="fig1">
-  <figcaption>Figure 1: Distribution of Recommended Case Outcomes</figcaption>
-  <img src="2_visualizations/fig1.png" alt="CRB ITS">
-</figure>
+<div align="center">
+  <figure id="fig1">
+    <img src="2_visualizations/fig1.png" alt="Distribution of case outcomes" width="70%">
+    <figcaption><strong>Figure 1:</strong> Distribution of Recommended Case Outcomes by Agency</figcaption>
+  </figure>
+</div>  
 
-### Research Design
+
+## Research Design
 Multiple analyses have been conducted to answer various aspects of the research questions. These include:  
 
 - Logistic Regression      
@@ -103,35 +105,38 @@ Multiple analyses have been conducted to answer various aspects of the research 
 
 *Code and results for these analyses are available upon request.*  
 
-### Findings  
+## Findings  
 Preliminary key findings include: 
 
 1. **Impact on CRB Recommendations:** Strong causal evidence that the 2017 reforms led to an
 increase in the rate at which the CRB recommended sustaining complaints (see [Figure 2](#fig2)).
 
-<figure id="fig2">
-  <figcaption>Figure 2: Predicted Probability of CRB's Recommended Outcome = Sustain</figcaption>
-  <img src="2_visualizations/fig2.png" alt="CRB ITS">
-</figure>
+<figure id="fig2" style="text-align: center;">
+  <img src="2_visualizations/fig2.png" alt="CRB recommended outcomes over time" style="max-width: 70%; height: auto; margin: 10px 0;">
+  <figcaption><strong>Figure 2:</strong> Predicted Probability of CRB's Recommended Outcome = Sustain</figcaption>
+</figure>  
+
 
 2. **Limited Impact on Final Outcomes:** No causal evidence that the reforms led to an increase in
 final sustain rates. This suggests that the 2017 CRB reforms did not impact CPD leadership's adoption 
 of CRB recommendations (see [Figure 3](#fig3)).
 
-<figure id="fig3">
-  <figcaption>Figure 3: Predicted Probability of Final Outcome = Sustain</figcaption>
-  <img src="2_visualizations/fig3.png" alt="CPD ITS">
-</figure>
+<figure id="fig3" style="text-align: center;">
+  <img src="2_visualizations/fig3.png" alt="CPD final outcomes over time" style="max-width: 70%; height: auto; margin: 10px 0;">
+  <figcaption><strong>Figure 3:</strong> Predicted Probability of Final Outcome = Sustain</figcaption>
+</figure>  
+
 
 3. **Persistent Racial Disparities:** Racial disparities in complaint substantiation rates persisted in both 
 recommended and final case outcomes, despite the CRB reform efforts to reduce disparities (see [Figure 4](#figure-4)).     
 
-<figure id="figure-4">
-  <figcaption>Figure 4: Racial Disparities in CRB Recommended Sustain Rates</figcaption>
-  <img src="2_visualizations/fig4.png" alt="c-race">
-</figure>
+<figure id="fig4" style="text-align: center;">
+  <img src="2_visualizations/fig4.png" alt="Racial disparities in outcomes" style="max-width: 70%; height: auto; margin: 10px 0;">
+  <figcaption><strong>Figure 4:</strong> Racial Disparities in CRB Recommended Sustain Rates</figcaption>
+</figure>  
 
-### Publication Status
+
+## Publication Status
 
 A manuscript is currently in preparation for peer-reviewed publication.
 

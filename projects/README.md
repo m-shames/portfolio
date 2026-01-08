@@ -2,8 +2,7 @@
 This repository contains examples of my quantitative research and analysis work 
 related to criminal justice reform.
 
-**Note on Data Confidentiality:**  
-Much of my research involves restricted or confidential data from correctional 
+**Note on Data Confidentiality:** Much of my research involves restricted or confidential data from correctional 
 facilities, law enforcement agencies, and legal proceedings. While datasets 
 and complete analyses cannot be shared publicly, additional code samples and results 
 are available upon request.  
