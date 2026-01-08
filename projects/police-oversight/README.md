@@ -139,7 +139,7 @@ of CRB recommendations (see [Figure 3](#fig3)).
 <br>
 
 3. **Persistent Racial Disparities:** Racial disparities in complaint substantiation rates persisted in both 
-recommended and final case outcomes, despite the CRB reform efforts to reduce disparities (see [Figure 4](#figure-4)).     
+recommended and final case outcomes, despite the CRB reform efforts to reduce disparities (see [Figure 4](#fig4)).     
 
 <div align="center">
   <figure id="fig4">
