@@ -91,9 +91,11 @@ The distribution of CRB's recommended case findings by agency are plotted in [Fi
 <div align="center">
   <figure id="fig1">
     <img src="2_visualizations/fig1.png" alt="Distribution of case outcomes" width="70%">
+    <br>
     <figcaption><strong>Figure 1:</strong> Distribution of Recommended Case Outcomes by Agency</figcaption>
   </figure>
-</div>  
+</div>
+
 <br>
 
 ## Research Design
@@ -112,34 +114,41 @@ Preliminary key findings include:
 increase in the rate at which the CRB recommended sustaining complaints (see [Figure 2](#fig2)).
 
 <div align="center">
-<figure id="fig2" style="text-align: center;">
-  <img src="2_visualizations/fig2.png" alt="CRB recommended outcomes over time" style="max-width: 70%; height: auto; margin: 10px 0;">
-  <figcaption><strong>Figure 2:</strong> Predicted Probability of CRB's Recommended Outcome = Sustain</figcaption>
-</figure>  
+  <figure id="fig2">
+    <img src="2_visualizations/fig2.png" alt="CRB recommended outcomes over time" width="70%">
+    <br>
+    <figcaption><strong>Figure 2:</strong> Predicted Probability of CRB's Recommended Outcome = Sustain</figcaption>
+  </figure>
 </div>
+
 <br>
+
 
 2. **Limited Impact on Final Outcomes:** No causal evidence that the reforms led to an increase in
 final sustain rates. This suggests that the 2017 CRB reforms did not impact CPD leadership's adoption 
 of CRB recommendations (see [Figure 3](#fig3)).
 
 <div align="center">
-<figure id="fig3" style="text-align: center;">
-  <img src="2_visualizations/fig3.png" alt="CPD final outcomes over time" style="max-width: 70%; height: auto; margin: 10px 0;">
-  <figcaption><strong>Figure 3:</strong> Predicted Probability of Final Outcome = Sustain</figcaption>
-</figure>  
+  <figure id="fig3">
+    <img src="2_visualizations/fig3.png" alt="CPD final outcomes over time" width="70%">
+    <br>
+    <figcaption><strong>Figure 3:</strong> Predicted Probability of Final Outcome = Sustain</figcaption>
+  </figure>
 </div>
+
 <br>
 
 3. **Persistent Racial Disparities:** Racial disparities in complaint substantiation rates persisted in both 
 recommended and final case outcomes, despite the CRB reform efforts to reduce disparities (see [Figure 4](#figure-4)).     
 
 <div align="center">
-<figure id="fig4" style="text-align: center;">
-  <img src="2_visualizations/fig4.png" alt="Racial disparities in outcomes" style="max-width: 70%; height: auto; margin: 10px 0;">
-  <figcaption><strong>Figure 4:</strong> Racial Disparities in CRB Recommended Sustain Rates</figcaption>
-</figure>  
+  <figure id="fig4">
+    <img src="2_visualizations/fig4.png" alt="Racial disparities in outcomes" width="70%">
+    <br>
+    <figcaption><strong>Figure 4:</strong> Racial Disparities in CRB Recommended Sustain Rates</figcaption>
+  </figure>
 </div>
+
 <br>
 
 ## Publication Status
