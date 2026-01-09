@@ -8,9 +8,13 @@
 ## Raw data files
 *.rda
 *.rds
+*.csv
 
 ## macOS hidden files
 .DS_Store
+
+## notes
+projects/police-oversight/NOTES/
 
 # =========================
 # Template Ignore
