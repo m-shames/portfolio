@@ -20,7 +20,12 @@ As part of my dissertation research, this project evaluates the impact of Chicag
   - [`1_bigquery_copa_extract.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/1_bigquery_copa_extract.R):
   Extract FOIA data from BigQuery cloud data warehouse
   - [`2_copa_ETL.R`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_v1/2_copa_ETL.R):
-Prep and merge datasets for analysis
+Prep and merge FOIA and ACS datasets
+
+**API scripts for public data download**
+
+  - [`COPA_API.py`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_API/COPA_API.py):
+Python API script for downloading public COPA complaint data  
 
 **Visualizations**  
 
