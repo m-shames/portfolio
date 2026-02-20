@@ -2,9 +2,6 @@
 # Additional Ignore
 # =========================
 
-## HTML previews
-*README*.html
-
 ## Raw data files
 *.rda
 *.rds
@@ -13,8 +10,15 @@
 ## macOS hidden files
 .DS_Store
 
-## notes
-projects/police-oversight/NOTES/
+## Python
+__pycache__/
+*.pyc
+
+## main branch folders
+projects/*
+
+## in progress folders
+code-samples/*
 
 # =========================
 # Template Ignore
@@ -42,6 +46,7 @@ projects/police-oversight/NOTES/
 
 # RStudio files
 .Rproj.user/
+*.Rproj
 
 # produced vignettes
 vignettes/*.html
