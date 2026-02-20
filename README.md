@@ -1,28 +1,34 @@
-# Repo Overview
-Welcome to my public portfolio. This repository contains information from my resume, 
-as well as background information, data analysis, code, and visualizations from select 
-past and ongoing research projects.   
+# Michelle Shames — Research Portfolio
+Researcher and data scientist specializing in the quantitative evaluation of 
+criminal legal reform. This repository contains background information, code, 
+and visualizations from select past and ongoing research projects. 
+Supplementary CV documents are shared below.   
+ 
+----
 
-**Sample code for job applications can be found [here](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight/1_code-sample).**
+## Select Projects
 
-## Navigation
+### [Police Oversight & Accountability](https://github.com/m-shames/portfolio/tree/main/police-oversight): 
+Dissertation research evaluating Chicago Civilian Review Board reforms using 
+an interrupted time series design. Includes pipeline for a 26,000+ record database built 
+from FOIA and public data, cleaning and validation scripts, causal modeling, and visualizations.
 
-### I. Curriculum Vitae Documents
+### [Solitary Confinement](https://github.com/m-shames/portfolio/tree/main/solitary-confinement): 
+Summary of solitary confinement-related research including analyses supporting civil rights litigation 
+and links to publications. 
+
+----
+
+## CV Documents
 - [`CV-leadership_MShames.pdf`](https://github.com/m-shames/portfolio/blob/main/CV-leadership_MShames.pdf): 
-Lists my teaching experience and select service and leadership roles.     
-- [`CV-pubs_MShames.pdf`](https://github.com/m-shames/portfolio/blob/main/CV-pubs_MShames.pdf): 
-Lists my publications and presentations.  
-  
+Academic teaching and service.      
+- [`CV-pubs_MShames.md`](https://github.com/m-shames/portfolio/blob/main/CV-pubs_MShames.md): 
+Publications and invited speaking engagements.    
 
-### II. Select Projects
- - [Police Oversight](https://github.com/m-shames/portfolio/tree/main/projects/police-oversight): 
- Includes background information and sample code & visualizations from my dissertation research on Chicago's 
- Civilian Office of Police Accountability (COPA) reforms.  
- - [Solitary Confinement](https://github.com/m-shames/portfolio/tree/main/projects/solitary-confinement): 
- Includes information about research I've conducted related to solitary confinement. 
+----
 
 ## License & Usage
-Copyright (c) 2025 Michelle C. Shames
+Copyright (c) 2026 Michelle C. Shames
 All Rights Reserved.
 
 This repository is shared for viewing and reference purposes only.
