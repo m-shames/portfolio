@@ -27,22 +27,24 @@ load(here("data/raw/foia/df.misconduct_cms.rda"))
 
 # 1. PREP MISCONDUCT DFs --------------------------------------------------
 
-# compare DF structures
-# tbl.compare <- tibble(
-#   variable = names(df.misconduct_clear),
-#   clear_types = map_chr(df.misconduct_clear, ~ class(.)[1])
-# ) |> 
-#   full_join(
-#     tibble(
-#       variable = names(df.misconduct_cms),
-#       cms_types = map_chr(df.misconduct_cms, ~ class(.)[1])
-#     ),
-#     by = "variable"
-#   ) |>
-#   mutate(types_match = clear_types == cms_types) |> 
-#   arrange(variable)
-# 
-# print(tbl.compare, n = Inf, width = Inf)
+if (interactive()) {
+  # compare DF structures
+  tbl.compare <- tibble(
+    variable = names(df.misconduct_clear),
+    clear_types = map_chr(df.misconduct_clear, ~ class(.)[1])
+  ) |>
+    full_join(
+      tibble(
+        variable = names(df.misconduct_cms),
+        cms_types = map_chr(df.misconduct_cms, ~ class(.)[1])
+      ),
+      by = "variable"
+    ) |>
+    mutate(types_match = clear_types == cms_types) |>
+    arrange(variable)
+  
+  print(tbl.compare, n = Inf, width = Inf)
+}
 
 # standardize: convert CMS types to match CLEAR 
 df.misconduct_cms <- df.misconduct_cms |>
@@ -103,16 +105,19 @@ stopifnot(
     nrow(df.misconduct_combined) == nrow(df.misconduct_clear) + nrow(df.misconduct_cms)
 )
 
-# check missing columns (all NA) by source
-# tbl.missing <- df.misconduct_combined |>
-#   group_by(source_period) |>
-#   summarise(across(everything(), ~all(is.na(.)))) |>
-#   pivot_longer(-source_period,
-#                names_to = "column",
-#                values_to = "all_missing"
-#                ) |>
-#   filter(all_missing == TRUE)
-# print(tbl.missing, n = Inf, width = Inf)
+if (interactive()) {
+  # check missing columns (all NA) by source
+  tbl.missing <- df.misconduct_combined |>
+    group_by(source_period) |>
+    summarise(across(everything(), ~all(is.na(.)))) |>
+    pivot_longer(-source_period,
+                 names_to = "column",
+                 values_to = "all_missing"
+                 ) |>
+    filter(all_missing == TRUE)
+  
+  print(tbl.missing, n = Inf, width = Inf)
+}
 
 # → missing to address in cleaning
 #   CMS: allegation_category_desc
@@ -151,13 +156,15 @@ df.misconduct_combined <- df.misconduct_combined |>
 
 ## 3.3 Check missingness in beat_clean within analytic window ----
 
-# df.misconduct_combined |>
-#   filter(beat_clean == "True Missing") |>
-#   filter(investigation_status == "Closed") |>
-#   filter(between(year_filed, 2013, 2021)) |>
-#   filter(!is.na(recommended_finding)) |>
-#   filter(complainant_type == "CIVILIAN") |>
-#   count(district_of_incident)
+if (interactive()) {
+  df.misconduct_combined |>
+    filter(beat_clean == "True Missing") |>
+    filter(investigation_status == "Closed") |>
+    filter(between(year_filed, 2013, 2021)) |>
+    filter(!is.na(recommended_finding)) |>
+    filter(complainant_type == "CIVILIAN") |>
+    count(district_of_incident)
+}
 
 # → 271/274 cases with missing beats also have missing districts;
 #   flagged for follow-up in EDA; not addressed in this pipeline

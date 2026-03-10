@@ -48,12 +48,17 @@ A comprehensive database of misconduct complaints and investigation outcomes was
 - Demographic data from the American Community Survey  
 - Shapefiles and jurisdiction boundaries from the City of Chicago and `tidycensus`  
 
+> A similar complaint-level dataset is publicly available through [the Invisible 
+Institute](https://github.com/invinst/chicago-police-data). The present database extends that 
+work with post reform covereage, beat-level ACS demographic linkages, and allegation-level recommended and 
+final determinations, allowing for causal analysis of CRB reforms and CPD follow-through.  
+
 ### Sample
 - **Time period:** Sept 15, 2013 – Sept 15, 2021 (±4 years around intervention)
 - **Case Status:** Investigation was complete by the date FOIA data was obtained (June 2022) 
 - **Complaint type:** Civilian complainants only  
 - **Location:** Alleged incident within CPD jurisdiction, excluding O'Hare Airport
-- **Final sample:** 25,288 unique police misconduct allegations
+- **Final sample:** 22,469 unique police misconduct allegations  
 
 ### Outcome Variables
 - CRB recommended case finding
@@ -135,7 +140,7 @@ rates persisted in both recommended and final case outcomes despite the reforms
 
 **[`data-pipeline/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data-pipeline)**: ETL pipeline for constructing the misconduct complaint database  
 
-**`data-privacy/`**: Officer de-identification & anonymization *(forthcoming)*  
+**`data-privacy/`**: De-identification & anonymization *(forthcoming)*  
 
 **[`data/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data)**: Raw and processed data *(excluded via `.gitignore`; final dataset forthcoming post-defense)*
 
@@ -151,7 +156,7 @@ rates persisted in both recommended and final case outcomes despite the reforms
 ### Available upon request
 - Complete modeling and analysis code (logistic regression, ITS, PMGCO)
 - Detailed results and robustness checks
-- Sample complaint database
+- Complaint database
 
 ----
 

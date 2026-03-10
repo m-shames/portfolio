@@ -28,23 +28,25 @@ load(here("data/raw/foia/df.complainants_cms.rda"))
 
 # 1. PREP COMPLAINANT DFs -------------------------------------------------
 
+if (interactive()) {
 # compare DF structures
-# tbl.compare <- tibble(
-#   clear_vars = names(df.complainants_clear),
-#   clear_types = map_chr(df.complainants_clear, ~ class(.)[1])
-# ) |>
-#   full_join(
-#     tibble(
-#       cms_vars = names(df.complainants_cms),
-#       cms_types = map_chr(df.complainants_cms, ~ class(.)[1])
-#     ),
-#     by = c("clear_vars" = "cms_vars")
-#   ) |>
-#   rename(variable = clear_vars) |>
-#   mutate(types_match = clear_types == cms_types)
-# 
-# print(tbl.compare, n = Inf, width = Inf)
-# # → only mismatch: CMS is missing investigation_status
+  tbl.compare <- tibble(
+    clear_vars = names(df.complainants_clear),
+    clear_types = map_chr(df.complainants_clear, ~ class(.)[1])
+  ) |>
+    full_join(
+      tibble(
+        cms_vars = names(df.complainants_cms),
+        cms_types = map_chr(df.complainants_cms, ~ class(.)[1])
+      ),
+      by = c("clear_vars" = "cms_vars")
+    ) |>
+    rename(variable = clear_vars) |>
+    mutate(types_match = clear_types == cms_types)
+  
+  print(tbl.compare, n = Inf, width = Inf)
+# → only 1 mismatch: CMS is missing investigation_status
+}
 
 # replace blank strings with NA 
 df.complainants_clear <- df.complainants_clear |>
@@ -180,16 +182,22 @@ df.complainants_combined <- df.complainants_combined |>
 ## 3.5 Validate recodes ----
 
 # check crosswalks
-# df.complainants_combined |>
-#   count(c_race, c_race_collapsed) |>
-#   arrange(c_race_collapsed, desc(n)) |> 
-#   print(n = Inf)
-# df.complainants_combined |>
-#   count(c_gender, c_gender_collapsed) |>
-#   arrange(c_gender_collapsed, desc(n))
-# df.complainants_combined |>
-#   count(c_role, c_role_collapsed) |>
-#   arrange(c_role_collapsed, desc(n))
+if (interactive()) {
+  
+  df.complainants_combined |>
+    count(c_race, c_race_collapsed) |>
+    arrange(c_race_collapsed, desc(n)) |>
+    print(n = Inf)
+    
+  df.complainants_combined |>
+    count(c_gender, c_gender_collapsed) |>
+    arrange(c_gender_collapsed, desc(n))
+  
+  df.complainants_combined |>
+    count(c_role, c_role_collapsed) |>
+    arrange(c_role_collapsed, desc(n))
+  
+}
 
 stopifnot(
   "Recode Error: Unmapped values in c_race_collapsed" =

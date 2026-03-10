@@ -9,7 +9,7 @@
 
 # Dependencies
 #   Run after: 3
-#   Output used by: 5
+#   Output used by: 4.2
 
 # Output
 #   data/cleaning/df.foia_subsample_clean.rda
@@ -26,11 +26,8 @@ load(here("data/cleaning/df.foia_subsample.rda"))
 source(here("data-pipeline/utils.R"))
 
 ## explore & organize ----
-
-# run integrity check from utils.R
-if (interactive()) {
-  check_coverage(df.foia_subsample)
-}
+# use check_coverage() and skimr::skim_without_charts(df[v.group]) 
+#   to review each variable group interactively before proceeding
 
 # reorder df cols using utils vectors
 df.foia_subsample <- df.foia_subsample |>
@@ -49,8 +46,7 @@ df.foia_subsample <- df.foia_subsample |>
   )
 
 # 1. IDs ------------------------------------------------------------------
-# skimr::skim_without_charts(df.foia_subsample[v.id])
-#   allegation_key treated in script 5
+# note: allegation_key treated in script 5
 
 ## 1.1 Officer ID ----
 
@@ -71,9 +67,10 @@ df.foia_subsample <- df.foia_subsample |>
   ) |>
   
   # concatenate into composite officer ID
-  unite("officer_id", 
+  unite("officer_id",
         accused_star_no, accused_last_name, accused_first_name, accused_birth_year,
-        sep = "_", remove = FALSE) |> 
+        sep = "_", remove = FALSE) |>
+  mutate(officer_id = if_else(officer_id == "NA_NA_NA_NA", NA_character_, officer_id)) |>
   relocate(officer_id, .after = record_id)
 
 ## 1.2 Clean types ----
@@ -81,8 +78,7 @@ df.foia_subsample <- df.foia_subsample |>
   mutate(source_period = as.factor(source_period))
 
 # 2. CPD GEO --------------------------------------------------------------
-# skimr::skim_without_charts(df.foia_subsample[v.cpd_geo])
-#   beat_clean created & padded in script 2.1
+# note: beat_clean created & padded in script 2.1
 
 ## 2.1 CPD District ----
 
@@ -101,9 +97,9 @@ df.foia_subsample <- df.foia_subsample |>
     is.na(district_of_incident) ~ NA_character_,
     district_of_incident %in% c("02", "03", "07", "08", "09") ~ "South Side",
     district_of_incident %in% c("04", "05", "06", "22") ~ "Far South Side",
-    district_of_incident %in% c("01", "12", "18", "19", "20", "24") ~ "DT & North",
-    district_of_incident %in% c("10", "11", "15") ~ "West",
-    district_of_incident %in% c("14", "16", "17", "25") ~ "Northwest",
+    district_of_incident %in% c("01", "12", "18", "19", "20", "24") ~ "Central & North Side",
+    district_of_incident %in% c("10", "11", "15") ~ "West Side",
+    district_of_incident %in% c("14", "16", "17", "25") ~ "Northwest Side",
     TRUE ~ "Check area" 
   )) |>
   mutate(area = as.factor(area),
@@ -112,8 +108,7 @@ df.foia_subsample <- df.foia_subsample |>
   relocate(area, .after = district_of_incident)
 
 # 3. CASE -----------------------------------------------------------------
-# skimr::skim_without_charts(df.foia_subsample[(v.case)])
-#   → allegation category variables treated in script 4.2
+# note: allegation category variables treated in script 4.2
 
 ## 3.1 Incident date ----
 df.foia_subsample <- df.foia_subsample |>
@@ -156,8 +151,10 @@ stopifnot(
 #### n incidents per allegation ----
 df.foia_subsample <- df.foia_subsample |>
   group_by(allegation_key) |>
-  mutate(n_AK_dupes = n()) |>
-  ungroup() |> 
+  mutate(n_AK_dupes = if_else(
+    is.na(allegation_key), NA_integer_, n()
+  )) |>
+  ungroup() |>
   relocate(n_AK_dupes, .after = n_OFs)
 
 #### n allegations per officer ----
@@ -167,8 +164,7 @@ df.foia_subsample <- df.foia_subsample |>
   ungroup() |> 
   relocate(n_OF_AKs, .after = n_OFs)
 
-# 4. OFFICER DEMOGRAPHICS -------------------------------------------------
-# skimr::skim_without_charts(df.foia_subsample[(v.officer)])
+# 4. ACCUSED OFFICER DEMOGRAPHICS -----------------------------------------
 
 ## 4.1 Gender collapsed ----
 df.foia_subsample <- df.foia_subsample |>
@@ -184,9 +180,11 @@ df.foia_subsample <- df.foia_subsample |>
   relocate(accused_gender_c, .after = accused_gender)
 
 # validate
-# df.foia_subsample |> 
-#   count(accused_gender, accused_gender_c) |> 
-#   arrange(accused_gender_c, desc(n))
+if (interactive()) {
+  df.foia_subsample |>
+    count(accused_gender, accused_gender_c) |>
+    arrange(accused_gender_c, desc(n))
+}
 
 ## 4.2 Race collapsed ----
 df.foia_subsample <- df.foia_subsample |>
@@ -207,9 +205,11 @@ df.foia_subsample <- df.foia_subsample |>
   relocate(accused_race_c, .after = accused_race)
 
 # validate
-# df.foia_subsample |> 
-#   count(accused_race, accused_race_c) |> 
-#   arrange(accused_race_c, desc(n))
+if (interactive()) {
+  df.foia_subsample |>
+    count(accused_race, accused_race_c) |>
+    arrange(accused_race_c, desc(n))
+}
 
 ## 4.3 Years on force ----
 # days between CPD appointment & complaint date, floored to whole years
@@ -236,7 +236,6 @@ stopifnot(
 )
 
 # 5. COMPLAINANT AGGREGATION ----------------------------------------------
-# skimr::skim_without_charts(df.foia_subsample[(v.c_atts)])
 
 ## 5.1 N Complainants collapsed ----
 df.foia_subsample <- df.foia_subsample |>
@@ -317,7 +316,6 @@ df.foia_subsample <- df.foia_subsample |>
   relocate(c(c_race_tally, c_race_tally_mino), .after = c_gender_tally)
 
 # 6. OUTCOMES -------------------------------------------------------------
-# skimr::skim_without_charts(df.foia_subsample[(v.outcomes)])
 
 ## 6.1 Findings ----
 
@@ -341,9 +339,11 @@ df.foia_subsample <- df.foia_subsample |>
   relocate(recommended_finding_c1, .after = recommended_finding)
 
 # validate
-# df.foia_subsample |>
-#   count(recommended_finding, recommended_finding_c1) |>
-#   arrange(recommended_finding_c1, desc(n))
+if (interactive()) {
+  df.foia_subsample |>
+    count(recommended_finding, recommended_finding_c1) |>
+    arrange(recommended_finding_c1, desc(n))
+}
 
 ### final finding collapsed ----
 df.foia_subsample <- df.foia_subsample |> 
@@ -364,9 +364,11 @@ df.foia_subsample <- df.foia_subsample |>
   relocate(final_finding_c1, .after = final_finding)
 
 # validate
-# df.foia_subsample |>
-#   count(final_finding, final_finding_c1) |>
-#   arrange(final_finding_c1, desc(n))
+if (interactive()) {
+  df.foia_subsample |>
+    count(final_finding, final_finding_c1) |>
+    arrange(final_finding_c1, desc(n))
+}
 
 ## 6.2 Discipline ----
 
@@ -414,10 +416,12 @@ df.foia_subsample <- df.foia_subsample |>
   relocate(recommended_discipline_c1, .after = recommended_discipline)
 
 # validate
-# df.foia_subsample |>
-#   count(recommended_discipline, recommended_discipline_c1) |>
-#   arrange(recommended_discipline_c1, desc(n)) |>
-#   print(n = Inf)
+if (interactive()) {
+  df.foia_subsample |>
+    count(recommended_discipline, recommended_discipline_c1) |>
+    arrange(recommended_discipline_c1, desc(n)) |>
+    print(n = Inf)
+}
 
 ### final discipline collapsed ----
 df.foia_subsample <- df.foia_subsample |>
@@ -456,10 +460,12 @@ df.foia_subsample <- df.foia_subsample |>
   relocate(final_discipline_c1, .after = final_discipline)
 
 # validate
-# df.foia_subsample |>
-#   count(final_discipline, final_discipline_c1) |>
-#   arrange(final_discipline_c1, desc(n)) |>
-#   print(n = Inf)
+if (interactive()) {
+  df.foia_subsample |>
+    count(final_discipline, final_discipline_c1) |>
+    arrange(final_discipline_c1, desc(n)) |>
+    print(n = Inf)
+}
 
 # 7. ITS INTERVENTION -----------------------------------------------------
 # agency_end: primary ITS exposure variable → assigns allegations to IPRA/COPA

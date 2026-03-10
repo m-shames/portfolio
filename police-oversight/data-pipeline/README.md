@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/R-%3E%3D%204.1.0-blue) ![](https://img.shields.io/badge/BigQuery-Google%20Cloud-4285F4?logo=googlecloud&logoColor=white)    
 Packages: `tidyverse` · `here` · `bigrquery` · `skimr` · `janitor` · `labelled` · `sjPlot`  
 
-Constructs a database of 25,288 allegation-level police misconduct complaint 
+Constructs a database of 22,469 allegation-level police misconduct complaint 
 records filed with Chicago's Civilian Review Board (CRB) for 
 an interrupted time series (ITS) evaluation of 2017 civilian oversight reforms 
 (IPRA → COPA transition). See the [project overview](https://github.com/m-shames/portfolio/blob/updated/police-oversight/README.md) for research 
@@ -22,7 +22,7 @@ and supplementary public complaint data from the City of Chicago.
 [`run_all.R`](https://github.com/m-shames/portfolio/blob/updated/police-oversight/data-pipeline/run_all.R) 
   to execute the full pipeline. 
   
->Note: Script `6.2` is exploratory and not sourced by `run_all.R` →  review before first run of `6.3`.
+> Note: Script `6.2` is exploratory and not sourced by `run_all.R` →  review before first run of `6.3`.
 
 ---
 
@@ -45,7 +45,7 @@ and supplementary public complaint data from the City of Chicago.
 | 2.3 | `2.3_merge_FOIA-ACS.R` | Join misconduct data + complainant group attributes + beat-level ACS demographics |
 | 3 | `3_subsample.R` | Create analytic sample: 8-year window; closed cases; CPD jurisdiction only |
 | 4.1 | `4.1_clean_subsample.R` | Clean & recode variables; construct Interrupted Time Series (ITS) exposure |
-| 4.2 | `4.2_clean_allegations.R` | CMS-CLEAR Allegation crosswalk *(public release pending)* |
+| 4.2 | `4.2_clean_allegations.R` | CMS-CLEAR allegation crosswalk & IPRA-COPA jurisdiction flags *(public release pending)* |  
 | 5 | `5_de-dupe.R` | Detect & resolve allegation-level duplicates |
 | 6.1 | `6.1_retrieve_public-data.R` | Download public COPA case summaries |
 | 6.2 | `6.2_investigate_NA-outcomes.R` | Diagnose missing FOIA outcomes using matched public COPA data (exploratory) |
@@ -72,11 +72,11 @@ will be shared publicly following dissertation defense.
 
 **Output**  
 
-- `data/final/df.foia_labeled.rda`: labeled allegation-level dataset (25,288 rows × 136 variables)
+- `data/final/df.foia_labeled.rda`: labeled allegation-level dataset (22,469 rows × 134 variables)
 - `data/final/codebook_crb-complaint-database.html`: variable codebook (forthcoming as interactive document)
 
 ---
 
 *Michelle Shames | PhD Candidate, Sociology & Applied Statistics*
 
-*Code shared for portfolio and transparency purposes. Not licensed for reuse; open-access release planned following defense.*
+*Code shared for portfolio and transparency purposes. Not licensed for reuse; open-access release planned following dissertation defense.*

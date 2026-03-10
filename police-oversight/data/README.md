@@ -1,6 +1,6 @@
 # Data
 
-Raw and processed data for the CRB Misconduct Complaint Database.
+Raw and processed data for the Chicago CRB Misconduct Complaint Database.
 
 Data are excluded from this repository via `.gitignore` due to privacy 
 considerations. Final and de-identified datasets will be shared publicly 
@@ -14,4 +14,4 @@ following dissertation defense.
 └── final/      # Final labeled dataset and codebook
 ```
 
-See the [pipeline README](https://github.com/m-shames/portfolio/blob/updated/police-oversight/data-pipeline/README.md) for full documentation of sources and output.
+See the [pipeline README](https://github.com/m-shames/portfolio/blob/updated/police-oversight/data-pipeline/README.md) for full documentation of sources, decisions, and output.

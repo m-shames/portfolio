@@ -6,10 +6,10 @@
 # About
 #   Source all data pipeline scripts in order
 #   Each script loads output of preceding step and saves its own
-#     output as an .rda file in subdirectory created in script 0
+#     output as an .rda file in subdirectories created in setup script
 
 # Dependencies
-#   Run setup.R once on a new machine before executing this script.
+#   Run setup.R once on a new machine before executing this script
 
 # Final Pipeline Output
 #   data/final/df.foia_labeled.rda
@@ -33,9 +33,8 @@ source(here("data-pipeline/R/3_subsample.R"))
 
 # 4. CLEAN ----------------------------------------------------------------
 source(here("data-pipeline/R/4.1_clean_subsample.R"))
-# 4.2_clean_allegations.R excluded pending completion of 
-#   CLEAR/CMS allegation category crosswalk. Allegation variables
-#   are retained in raw form in the current final dataset.
+# 4.2_clean_allegations.R excluded pending public release of 
+#   CLEAR/CMS allegation category crosswalk
 
 # 5. DEDUPLICATE ----------------------------------------------------------
 source(here("data-pipeline/R/5_de-dupe.R"))

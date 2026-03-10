@@ -33,8 +33,11 @@ df.foia_labeled <- df.foia_subsample_clean_outcomes |>
     
     # redundant
     -investigation_status,   # all subset observations are closed by construction
+    -incident_datetime,      # replaced by incident_date  
     -sector,                 # overlap with beat_clean
-    -beat_of_incident,       # replaced by beat_clean
+    -beat_of_incident,       # replaced by cleaned variable
+    -accused_gender,         # replaced by cleaned variable
+    -accused_race,           # replaced by cleaned variable
     -comm_area_num,          # 1:1 with comm_area_name; name retained
     
     # extractable from geometry 
@@ -68,15 +71,43 @@ df.foia_labeled <- df.foia_subsample_clean_outcomes |>
     -data_group              # CMS only
   )
 
+## rename variables ----
+df.foia_labeled <- df.foia_labeled |>
+  rename(
+    cpd_beat         = beat_clean,
+    cpd_district     = district_of_incident,
+    cpd_area         = area,
+    allegation_type  = alleg_gr_ms
+  )
+
+## drop levels with no values ----
+df.foia_labeled <- df.foia_labeled |>
+  mutate(across(where(is.factor), droplevels))
+
+## fix types ----
+df.foia_labeled <- df.foia_labeled |>
+  mutate(
+    geometry = as.character(geometry),
+    geometry = sf::st_as_sfc(
+      replace(geometry, is.na(geometry), "POINT EMPTY"),
+      crs = 4326
+    ),
+    complainant_type = as.factor(complainant_type),
+    allegation_type  = as.factor(allegation_type)
+  )
+  
 ## reorder ----
 df.foia_labeled <- df.foia_labeled |>
   relocate(officer_id, allegation_key, source_period, .after = record_id) |>
-  relocate(beat_clean, .before = district_of_incident) |> 
-  relocate(n_OFs:n_AK_dupes, .after = incident_datetime) |>
+  relocate(cpd_beat, .before = cpd_district) |> 
+  relocate(n_OFs:n_AK_dupes, .after = incident_date) |>
   relocate(complaint_date, year_filed, investigation_end_date, .after = allegation) |>
   relocate(finding_followthrough, .before = discipline_followthrough) |>
-  relocate(acs_t_pop, .after = full_address)
-
+  relocate(acs_t_pop, .after = full_address) |> 
+  relocate(allegation_type, alleg_ipra, alleg_copa, alleg_j_change, .after = accused_on_duty) |> 
+  relocate(accused_years_cpd, .before = accused_race_c) |> 
+  relocate(geometry, .before = acs_t_pop)
+  
 # 1. VARIABLE LABELS -------------------------------------------------------
 
 df.foia_labeled <- df.foia_labeled |>
@@ -84,35 +115,40 @@ df.foia_labeled <- df.foia_labeled |>
     
     ## IDs ----------------------------------------------------------------
     record_id      = "Unique CRB complaint identifier",
-    officer_id     = "Accused officer composite ID",
+    officer_id     = "Unique accused officer composite identifier",
     allegation_key = "Unique allegation × officer × case identifier",
     source_period  = "FOIA source database",
     
     ## Treatment group/ITS exposure ---------------------------------------
     complaint_date         = "Date complaint was filed",
+    year_filed             = "Calendar year complaint was filed",
     investigation_end_date = "Date investigation was closed",
     agency_end             = "Investigating agency at case closure",
     treatment_group        = "ITS assignment based on complaint filing & closure dates",
     
     ## CPD jurisdiction ---------------------------------------------------
-    beat_clean           = "CPD beat of alleged incident [coded 'True Missing' if NA or invalid]",
-    district_of_incident = "CPD district of alleged incident", 
-    area                 = "CPD area [post-2019 district boundaries]",
+    cpd_beat         = "CPD beat of alleged incident [coded 'True Missing' if NA or invalid]",
+    cpd_district     = "CPD district of alleged incident", 
+    cpd_area         = "CPD area [post-2019 district boundaries]",
     
     ## Incident & case details --------------------------------------------
+    incident_date    = "Date of most recent incident associated with allegation",
     complainant_type = "Complaint filed by civilian or CPD employee",
     accused_on_duty  = "Accused officer on duty during incident",
     n_AK_dupes       = "Number of incidents associated with allegation",
-    n_OF_AKs         = "Number of unique allegations per officer per case",
-    n_OFs            = "Number of officers named in complaint",
+    n_OF_AKs         = "Number of unique allegations per officer within case",
+    n_OFs            = "Number of officers named in case",
     
     ## Allegation ---------------------------------------------------------
-    # crosswalk between CLEAR and CMS allegation taxonomies is in progress;
-    # variables retained in raw form pending completion of script 4.2
-    allegation               = "Free-text allegation description",
-    allegation_category_cd   = "Allegation category numeric code",
-    allegation_category_desc = "Allegation category description (CLEAR system only)",
-    reporting_category       = "Allegation reporting category (CMS system only)",
+    allegation               = "Allegation text-narrative",
+    allegation_category_cd   = "Allegation code",
+    allegation_category_desc = "Allegation description (CLEAR only)",
+    reporting_category       = "Allegation category (CMS only)",
+    allegation_type          = "Allegation category [harmonized grouping across CLEAR and CMS systems]",
+    # pending crosswalk completion
+    # alleg_ipra               = "Allegation falls under IPRA jurisdiction",
+    # alleg_copa               = "Allegation falls under COPA jurisdiction",
+    # alleg_j_change           = "Allegation jurisdiction changed between IPRA and COPA",
     
     ## Raw outcomes -------------------------------------------------------
     recommended_finding    = "CRB recommended finding",
@@ -127,39 +163,36 @@ df.foia_labeled <- df.foia_labeled |>
     final_discipline_c1       = "CPD final discipline [collapsed]",
     
     ## Collapsed outcomes: level 2 (analytic) -----------------------------
-    recommended_finding_c2    = "CRB recommended finding, 3-category outcome variable",
-    final_finding_c2          = "CPD final finding, 3-category outcome variable",
-    recommended_discipline_c2 = "CRB recommended discipline, 4-category outcome variable",
-    final_discipline_c2       = "CPD final discipline, 4-category outcome variable",
+    recommended_finding_c2    = "CRB recommended finding [analytic grouping]",
+    final_finding_c2          = "CPD final finding [analytic grouping]",
+    recommended_discipline_c2 = "CRB recommended discipline [analytic grouping]",
+    final_discipline_c2       = "CPD final discipline [analytic grouping]",
     
     ## Outcome followthrough ----------------------------------------------
     finding_followthrough    = "Measure of CPD adoption of CRB recommended finding",
     discipline_followthrough = "Measure of CPD adoption of CRB recommended discipline",
     
-    ## Officer attributes -------------------------------------------------
-    accused_race_c         = "Officer race [collapsed]",
-    accused_gender_c       = "Officer gender [collapsed]",
-    accused_birth_year     = "Officer birth year",
-    accused_appointed_date = "Officer CPD appointment date",
-    accused_years_cpd      = "Years on CPD force at complaint date [derived from appointment date, rounded to full year]",
+    ## Accused officer attributes -----------------------------------------
+    accused_race_c         = "Remaining accused_* = accused officer attributes",
+    accused_years_cpd      = "Accused officer years on force at complaint date [derived from appointment date, rounded to full year]",
     
     ## Complainant attributes ---------------------------------------------
     n_complainants    = "Total number of complainants per complaint",
     n_Cs_collapsed    = "n_complainants, collapsed",
-    c_gender_tally    = "Gender composition of complainants",
-    c_race_tally      = "Racial composition of complainants",
-    c_race_tally_mino = "Minority status composition of complainants",
-    c_race_Black      = "Remaining c_* = count of complainants with demographic attribute per record_id",
+    c_gender_tally    = "Gender composition of complainants per case [derived]",
+    c_race_tally      = "Racial composition of complainants per case [derived]",
+    c_race_tally_mino = "Minority status composition of complainants per case [derived]",
+    c_race_Black      = "Remaining c_* = count of complainants with demographic attribute per case",
     
     ## ACS ----------------------------------------------------------------
-    # acs_t_* = universe totals (denominators); acs_n_* = subgroup counts;
-    # acs_pct_* = percentages; matched to complaint beat × year
     # see Census ACS documentation for variable definitions
-    acs_t_pop = "Beat-level ACS estimates (2013-2021), matched on beat × year; acs_t_* = universe totals (denominators); acs_n_* = subgroup counts",
-    
+    acs_t_pop       = "Beat-level ACS estimates, matched on beat × year; acs_t_* = universe totals (denominators)",
+    acs_n_adv_deg   = "Beat-level ACS estimates, matched on beat × year; acs_n_* = subgroup counts",
+    acs_pct_adv_deg = "Beat-level ACS estimates, matched on beat × year; acs_pct_* = percentages",
+
     ## Spatial ------------------------------------------------------------
     comm_area_name = "Incident spatial variables retained from FOIA for spatial-level analyses",
-    
+    geometry = "Incident coordinates (longitude, latitude)",
     ## Investigator -------------------------------------------------------
     investigator_first_name = "Investigator variables retained from FOIA for investigator-level analyses"
   )
@@ -181,6 +214,12 @@ attr(df.foia_labeled, "last-date-created") <- as.character(Sys.Date())
 attr(df.foia_labeled, "FOIA-fulfilled")    <- "2022-06-22"
 
 # SAVE & RENDER -----------------------------------------------------------
+
+# temporarily remove jurisdiction variables until crosswalk complete
+df.foia_labeled <- df.foia_labeled |>
+  select(-alleg_ipra,
+         -alleg_copa,
+         -alleg_j_change)
 
 save(df.foia_labeled, file = here("data/final/df.foia_labeled.rda"))
 

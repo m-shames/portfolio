@@ -23,7 +23,25 @@ v.junk_strings <- c(
 # star number values treated as missing
 v.junk_stars <- c("", ".", "1", " ")
 
-# 2. ORIGINAL VARIABLE VECTORS --------------------------------------------
+# 2. HELPERS --------------------------------------------------------------
+
+# track sample size 
+track_sample <- function(df, label) {
+  cat(sprintf(
+    "%-45s rows: %6d | allegation_keys: %6d | cases: %6d\n",
+    label,
+    nrow(df),
+    n_distinct(df$allegation_key, na.rm = TRUE),
+    n_distinct(df$record_id, na.rm = TRUE)
+  ))
+}
+  
+# standardize strings & identify junk values
+is_junk <- function(x) {
+  toupper(trimws(as.character(x))) %in% v.junk_strings
+}
+
+# 3. VARIABLE VECTORS -----------------------------------------------------
 # vectors group raw variables by type for use in column selection,
 #   ordering (via select(all_of(...))), and coverage validation
 
@@ -206,15 +224,9 @@ v.acs_pct <- c(
   "acs_pct_under_18"
 )
 
-# 3. HELPERS --------------------------------------------------------------
-
-# standardize strings and identify junk values in cleaning scripts
-is_junk <- function(x) {
-  toupper(trimws(as.character(x))) %in% v.junk_strings
-}
-
-# check that all variables are assigned to exactly one vector
-# reports unassigned & duplicate variables 
+## check vector coverage function ----
+# → all variables are assigned to exactly one vector
+# → reports unassigned & duplicate variables 
 check_coverage <- function(df) {
   all_vecs <- list(
     v.id = v.id, v.cpd_geo = v.cpd_geo, v.allegation = v.allegation,

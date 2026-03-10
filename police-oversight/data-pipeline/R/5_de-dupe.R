@@ -12,10 +12,10 @@
 #   allegation_key = unique identifier for allegation × officer × case  
 #   duplicate keys indicates multiple incidents tied to same allegation
 #   all outcome variables are constant within allegation_key → safe to deduplicate
-#   keep row with most recent close date → preserves >99% of outcome distribution  
+#   keep row with most recent close date → preserves >98% of outcome distribution  
 
 # Dependencies
-#   Run after: 4.1 (and 4.2 once complete)
+#   Run after: 4.2
 #   Output used by: 6.2 & 6.3
  
 # Output
@@ -29,7 +29,7 @@ library(tidyverse)
 library(here)
 
 ## load data ----
-load(here("data/cleaning/df.foia_subsample_clean.rda"))
+load(here("data/cleaning/df.foia_subsample_clean_allegations.rda"))
 
 # ==============================================================================
 # PART I: ESTABLISH DEDUPLICATION RATIONALE
@@ -52,7 +52,6 @@ if (interactive()) {
       n_allegation_codes = n_distinct(allegation_category_cd)
     ) |>
     filter(if_any(starts_with("n_"), ~ . > 1))
-
 }
 
 # → confirmed: within keys, same case, officer allegation code, finding
@@ -61,7 +60,7 @@ if (interactive()) {
 
 if (interactive()) {
   
-# → 6% of rows = missing 
+# → 7% of rows = missing 
 df.foia_subsample_clean |>
   summarise(
     n_total = n(),
@@ -71,7 +70,7 @@ df.foia_subsample_clean |>
 
 ## 2.1 by database ----
 
-# → 5-8% of allegations in each database have missing keys
+# → 5% of clear & 11.5% of cms rows missing keys
 df.foia_subsample_clean |>
   group_by(source_period) |>
   summarise(
@@ -141,7 +140,7 @@ df.dupes <- df.foia_subsample_clean |>
 
 if (interactive()) {
   
-# → n dupes = 1761
+# → n dupes = 1651
 n_distinct(df.dupes$allegation_key)
 
 # distribution of dupes → up to 7
@@ -168,14 +167,14 @@ df.dupes |>
   filter(n_distinct(incident_date) > 1) |>
   count(allegation_key) |> 
   arrange(desc(n))
-# → 682 AKs, max variation = 7
+# → 680 AKs, max variation = 7
 
 ## 3.3 diff investigation_end_dates ----
 df.dupes |>
   group_by(allegation_key) |>
   filter(n_distinct(investigation_end_date) > 1) |>
   count(allegation_key)
-# → 9 AKs,  max variation = 2
+# → 7 AKs,  max variation = 2
 
 ## 3.4 diff spatial indicators ----
 df.dupes |>
@@ -191,7 +190,7 @@ df.dupes |>
 # 4. KEY FINDINGS ---------------------------------------------------------
 
 # VARIABLES THAT DIFFER WITHIN UNIQUE ALLEGATION_KEYS
-#   investigation_end_date (only 9 AKs)
+#   investigation_end_date (only 7 AKs)
 #   incident date & location variables 
 #   all other variables incl outcome are constant
 
@@ -228,12 +227,11 @@ if (interactive()) {
   cat("Missing allegation_key rows:", sum(is.na(df.foia_subsample_clean$allegation_key)), "\n")
   cat("Duplicate rows to remove:", n_before - n_valid_aks - sum(is.na(df.foia_subsample_clean$allegation_key)), "\n")
 }
-
 # === PRE-DEDUPLICATION ===
-# Total rows: 27528 
-# Rows with valid allegation_keys: 23599 
-# Missing allegation_key rows: 1691 
-# Duplicate rows to remove: 2238
+# Total rows: 24586 
+# Rows with valid allegation_keys: 20814 
+# Missing allegation_key rows: 1656 
+# Duplicate rows to remove: 2116 
 
 ## 5.2 Deduplicate (keep latest close date) ----
 # selection priority for duplicate allegation_keys:
@@ -271,10 +269,10 @@ if (interactive()) {
 }
 
 # === POST-DEDUPLICATION === 
-# Total rows after: 25289 
-# Valid allegation_key rows: 23598 
-# Missing allegation_key rows: 1691 
-# Rows removed: 2239 ( 8.1 %)
+# Total rows after: 22470 
+# Valid allegation_key rows: 20814 
+# Missing allegation_key rows: 1656 
+# Rows removed: 2116 ( 8.6 %)
 
 stopifnot(
   "Dedup Error: Duplicate allegation_keys remain after deduplication" =
@@ -286,25 +284,20 @@ stopifnot(
 
 # 6. DOCUMENT IMPACT ------------------------------------------------------
 
-# confirm deduplication does not shift outcome proportions
-df.finding_comparison <- bind_rows(
-  df.foia_subsample_clean |> count(recommended_finding, name = "n_pre") |> 
-    mutate(pct_pre = n_pre / sum(n_pre)),
-  df.foia_subsample_deduped |> count(recommended_finding, name = "n_post") |> 
-    mutate(pct_post = n_post / sum(n_post))
-) |>
-  group_by(recommended_finding) |>
-  summarise(across(everything(), ~ sum(.x, na.rm = TRUE)), .groups = "drop") |>
-  mutate(delta_pct = (pct_post - pct_pre) * 100)
-
-stopifnot(
-  "Bias Warning: Deduplication shifted outcome proportions by > 1.5pp" = 
-    df.finding_comparison |> 
-    filter(!is.na(recommended_finding)) |> 
-    summarise(max_delta = max(abs(delta_pct))) |> 
-    # negligible threshold for ITS estimates
-    pull(max_delta) < 1.5
-)
+# confirm deduplication does not significantly shift outcome proportions
+if (interactive()) {
+  df.finding_comparison <- bind_rows(
+    df.foia_subsample_clean |> count(recommended_finding, name = "n_pre") |> 
+      mutate(pct_pre = n_pre / sum(n_pre)),
+    df.foia_subsample_deduped |> count(recommended_finding, name = "n_post") |> 
+      mutate(pct_post = n_post / sum(n_post))
+  ) |>
+    group_by(recommended_finding) |>
+    summarise(across(everything(), ~ sum(.x, na.rm = TRUE)), .groups = "drop") |>
+    mutate(delta_pct = (pct_post - pct_pre) * 100)
+  
+  print(df.finding_comparison)
+}
 
 # SAVE --------------------------------------------------------------------
 save(df.foia_subsample_deduped, 

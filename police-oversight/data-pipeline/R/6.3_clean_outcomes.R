@@ -4,12 +4,12 @@
 # Author: Michelle Shames
 
 # About
-#   Drop 1 case with unrecorded finding (record 2021-0000702; see 6.2)
-#   Recode missing outcomes to Admin Closure (see 6.2)
+#   Drop 2 cases with unrecorded findings (see script 6.2, section 3.3)
+#   Recode missing outcomes to Admin Closure (script 6.2, section 4)
 #   Collapse outcome variables & construct followthrough measures
 
 # Dependencies
-#   Run after: 5 (and review 6.2; findings inform outcome recoding decisions)
+#   Run after: 5 (and review 6.2 for finding recoding decisions)
 #   Output used by: 7
 
 # Output
@@ -25,9 +25,9 @@ library(here)
 ## load data ----
 load(here("data/cleaning/df.foia_subsample_deduped.rda"))
 
-## drop case with unrecorded finding (see script 6.2, section 3.4) ----
+## drop 2 cases ----
 df.foia_subsample_deduped <- df.foia_subsample_deduped |>
-  filter(record_id != "2021-0000702")
+  filter(!record_id %in% c("2021-0000702", "2018-1090333"))
 
 # 1. FINDINGS -------------------------------------------------------------
 
@@ -88,7 +88,7 @@ df.foia_subsample_clean_outcomes |>
 
 # investigate whether this reflects case-level discipline recording in CMS
 
-# step 1: rule out bleed from sustained co-allegations
+# rule out bleed from sustained co-allegations
 df.foia_subsample_clean_outcomes |>
   filter(recommended_finding_c1 != "Sustained",
          !is.na(recommended_discipline_c1)) |>
@@ -98,7 +98,7 @@ df.foia_subsample_clean_outcomes |>
   count(has_sustained_allegation)
 # → all FALSE: discipline is not bleeding from sustained co-allegations
 
-# step 2: confirm CMS records discipline at case level, not allegation level
+# confirm CMS records discipline at case level, not allegation level
 df.foia_subsample_clean_outcomes |>
   filter(agency_end == "COPA", source_period == "cms") |>
   group_by(record_id, officer_id) |>
