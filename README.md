@@ -9,8 +9,8 @@ select past and ongoing research projects. [View CV documents ↓](#cv-documents
 
 ### [Police Oversight & Accountability Research](https://github.com/m-shames/portfolio/tree/updated/police-oversight)   
 Dissertation research evaluating Chicago Civilian Review Board reforms using 
-an interrupted time series design. Includes pipeline for a 25,000+ record database built 
-from FOIA and public data, cleaning and validation scripts, causal modeling, and visualizations.
+an interrupted time series design. Includes pipeline for a 32,000+ allegation record database built 
+using FOIA and public data, cleaning and validation scripts, research methods and findings, and visualizations.
 
 ### [Solitary Confinement Research](https://github.com/m-shames/portfolio/tree/updated/solitary-confinement)   
 Summary of solitary confinement-related research including analyses supporting civil rights litigation 
@@ -19,7 +19,9 @@ and links to publications.
 ----
 
 ## CV Documents
-- [`CV-leadership_MShames.pdf`](https://github.com/m-shames/portfolio/blob/main/CV-leadership_MShames.pdf): 
+- [`CV-testimony_MShames.md`](https://github.com/m-shames/portfolio/blob/updated/CV-testimony_MShames.md): 
+Expert testimony provided in impact litigation cases.    
+- [`CV-leadership_MShames.pdf`](https://github.com/m-shames/portfolio/blob/updated/CV-leadership_MShames.pdf): 
 Academic teaching and service.      
 - [`CV-pubs_MShames.md`](https://github.com/m-shames/portfolio/blob/updated/CV-pubs_MShames.md): 
 Publications and invited speaking engagements.    
