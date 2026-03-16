@@ -54,11 +54,11 @@ work with post reform covereage, beat-level ACS demographic linkages, and allega
 final determinations, allowing for causal analysis of CRB reforms and CPD follow-through.  
 
 ### Sample
-- **Time period:** Sept 15, 2013 – Sept 15, 2021 (±4 years around intervention)
+- **Time period:** Cases closet between Sept 15, 2013 and Sept 15, 2021 (±4 years around intervention)
 - **Case Status:** Investigation was complete by the date FOIA data was obtained (June 2022) 
 - **Complaint type:** Civilian complainants only  
 - **Location:** Alleged incident within CPD jurisdiction, excluding O'Hare Airport
-- **Final sample:** 22,469 unique police misconduct allegations  
+- **Final sample:** 28,364 unique police misconduct allegations  
 
 ### Outcome Variables
 - CRB recommended case finding

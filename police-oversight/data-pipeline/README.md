@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/R-%3E%3D%204.1.0-blue) ![](https://img.shields.io/badge/BigQuery-Google%20Cloud-4285F4?logo=googlecloud&logoColor=white)    
 Packages: `tidyverse` · `here` · `bigrquery` · `skimr` · `janitor` · `labelled` · `sjPlot`  
 
-Constructs a database of 22,469 allegation-level police misconduct complaint 
+Constructs a database of 33,058 allegation-level police misconduct complaint 
 records filed with Chicago's Civilian Review Board (CRB) for 
 an interrupted time series (ITS) evaluation of 2017 civilian oversight reforms 
 (IPRA → COPA transition). See the [project overview](https://github.com/m-shames/portfolio/blob/updated/police-oversight/README.md) for research 

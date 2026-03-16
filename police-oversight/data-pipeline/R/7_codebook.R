@@ -193,6 +193,7 @@ df.foia_labeled <- df.foia_labeled |>
     ## Spatial ------------------------------------------------------------
     comm_area_name = "Incident spatial variables retained from FOIA for spatial-level analyses",
     geometry = "Incident coordinates (longitude, latitude)",
+    
     ## Investigator -------------------------------------------------------
     investigator_first_name = "Investigator variables retained from FOIA for investigator-level analyses"
   )
