@@ -198,7 +198,7 @@ df.foia_labeled <- df.foia_labeled |>
     investigator_first_name = "Investigator variables retained from FOIA for investigator-level analyses"
   )
 
-# 2. DATASET METADATA ------------------------------------------------------
+# 2. METADATA -------------------------------------------------------------
 
 attr(df.foia_labeled, "name")             <- "Chicago CRB Misconduct Complaint Database"
 attr(df.foia_labeled, "description")      <- paste(
@@ -223,6 +223,9 @@ df.foia_labeled <- df.foia_labeled |>
          -alleg_j_change)
 
 save(df.foia_labeled, file = here("data/final/df.foia_labeled.rda"))
+
+track_sample(df.foia_labeled, "Final Database")
+# rows:  33058 | allegation_keys:  31196 | cases:   9042
 
 sjPlot::view_df(
   df.foia_labeled,

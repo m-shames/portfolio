@@ -64,21 +64,6 @@ track_sample(df.foia_subsample, "2. Investigation end-date within window")
 #  rows:  38729 | allegation_keys:  31746 | cases:   9151
 
 # 2. FILTER JURISDICTION --------------------------------------------------
-# df.foia_subsample |>
-#   count(beat_clean) |> 
-#   print(n=Inf)
-# 
-# df.foia_subsample |>
-#   filter(beat_clean == "True Missing") |> 
-#   count(beat_of_incident)
-# 
-# df.foia_subsample |>
-#   filter(beat_clean == "True Missing") |> 
-#   count(district_of_incident)
-# 
-# df.foia_subsample |>
-#   filter(beat_clean == "True Missing") |> 
-#   count(recommended_finding)
 
 # explore unknown beats 
 if (interactive()) {
@@ -86,7 +71,7 @@ if (interactive()) {
     filter(beat_clean %in% c("3100", "4100")) |>
     count(beat_clean, geometry)
   # → beats 3100 (airports) and 4100 (outside Chicago) follow diff accountability 
-  #   processes; exclude both from analytical sample 
+  #   processes; exclude both from analytic sample 
 }
 
 # drop 3100 & 4100

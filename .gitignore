@@ -1,76 +1,61 @@
 # =========================
-# Additional Ignore
+# R Session & History
 # =========================
+.Rhistory
+.Rapp.history
+.RData
+.RDataTmp
+.Ruserdata
 
-## Raw data files
+# =========================
+# RStudio
+# =========================
+.Rproj.user/
+*.Rproj
+
+# =========================
+# R Markdown / Quarto
+# =========================
+*_cache/
+/cache/
+*.utf8.md
+*.knit.md
+/.quarto/
+
+# =========================
+# Credentials & Environment
+# =========================
+.Renviron
+.httr-oauth
+rsconnect/
+*.json       
+.secrets/ 
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+
+# =========================
+# Data & Assets
+# =========================
 *.rda
 *.rds
 *.csv
 
-## macOS hidden files
-.DS_Store
+# =========================
+# Ignored Folders
+# =========================
 
-## Python
-__pycache__/
-*.pyc
-
-## main branch folders
+## old main branch folders
 projects/*
 
 ## in progress folders
 code-samples/*
-
-# =========================
-# Template Ignore
-# =========================
-
-## History files
-.Rhistory
-.Rapp.history
-
-## Session Data files
-.RData
-.RDataTmp
-
-# User-specific files
-.Ruserdata
-
-# Example code in package build process
-*-Ex.R
-
-# Output files from R CMD build
-/*.tar.gz
-
-# Output files from R CMD check
-/*.Rcheck/
-
-# RStudio files
-.Rproj.user/
-*.Rproj
-
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
-
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
-.httr-oauth
-
-# knitr and R markdown default cache directories
-*_cache/
-/cache/
-
-# Temporary files created by R markdown
-*.utf8.md
-*.knit.md
-
-# R Environment Variables
-.Renviron
-
-# pkgdown site
-docs/
-
-# translation temp files
-po/*~
-
-# RStudio Connect folder
-rsconnect/
