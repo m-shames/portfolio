@@ -1,8 +1,16 @@
 # Michelle C. Shames — Research Portfolio
 Data Scientist & Researcher specializing in policy reform and evaluation. 
-This repository contains background information, code, and visualizations from 
-select past and ongoing research projects. [View CV documents ↓](#cv-documents)
+This repository contains background information, code, and visualizations from past and ongoing [research projects ↓](#select-projects).
  
+----
+
+## CV Materials
+
+- [`CV_teaching-service_MShames.pdf`](https://github.com/m-shames/portfolio/blob/updated/CV_teaching-service_MShames.pdf): 
+Academic teaching and service.      
+- [`CV_publications-speaking_MShames.pdf`](https://github.com/m-shames/portfolio/blob/updated/CV_publications-speaking_MShames.pdf): 
+Publications, invited speaking engagements, and expert witness testimony.    
+
 ----
 
 ## Select Projects
@@ -15,17 +23,6 @@ using FOIA and public data, cleaning and validation scripts, research methods an
 ### [Solitary Confinement Research](https://github.com/m-shames/portfolio/tree/updated/solitary-confinement)   
 Summary of solitary confinement-related research including analyses supporting civil rights litigation 
 and links to publications. 
-
-----
-
-## CV Documents  
-
-- [`CV-testimony_MShames.md`](https://github.com/m-shames/portfolio/blob/updated/CV-testimony_MShames.md): 
-Expert testimony provided in impact litigation cases.    
-- [`CV-leadership_MShames.pdf`](https://github.com/m-shames/portfolio/blob/updated/CV-leadership_MShames.pdf): 
-Academic teaching and service.      
-- [`CV-pubs_MShames.md`](https://github.com/m-shames/portfolio/blob/updated/CV-pubs_MShames.md): 
-Publications and invited speaking engagements.    
 
 ----
 
