@@ -54,8 +54,5 @@ __pycache__/
 # Ignored Folders
 # =========================
 
-## old main branch folders
-projects/*
-
 ## in progress folders
-code-samples/*
+sandbox/*
