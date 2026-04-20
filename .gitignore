@@ -1,4 +1,18 @@
 # =========================
+# Credentials & Environment
+# =========================
+secrets.json
+.secrets/ 
+*.pem 
+*.key
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
 # R Session & History
 # =========================
 .Rhistory
@@ -6,6 +20,9 @@
 .RData
 .RDataTmp
 .Ruserdata
+.Renviron
+.httr-oauth
+rsconnect/
 
 # =========================
 # RStudio
@@ -23,25 +40,11 @@
 /.quarto/
 
 # =========================
-# Credentials & Environment
-# =========================
-.Renviron
-.httr-oauth
-rsconnect/
-*.json       
-.secrets/ 
-
-# =========================
-# OS Files
-# =========================
-.DS_Store
-Thumbs.db
-
-# =========================
 # Python
 # =========================
 __pycache__/
 *.pyc
+.env
 
 # =========================
 # Data & Assets
@@ -49,10 +52,9 @@ __pycache__/
 *.rda
 *.rds
 *.csv
+*.json   
 
 # =========================
-# Ignored Folders
+# Ignored Folders (in progress)
 # =========================
-
-## in progress folders
 sandbox/*
