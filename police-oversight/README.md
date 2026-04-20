@@ -1,11 +1,6 @@
 # Police Oversight & Accountability Research
 
-Dissertation research evaluating the impact of Chicago's 2017 civilian oversight 
-reforms on police misconduct investigation outcomes and officer discipline. Using 
-an interrupted time series (ITS) design, this project asks whether the transition 
-from the Independent Police Review Authority (IPRA) to the Civilian Office of 
-Police Accountability (COPA) causally changed how complaints are investigated, 
-substantiated, and acted upon.
+Dissertation research evaluating the impact of Chicago's 2017 civilian oversight reforms on police misconduct investigation outcomes and officer discipline. Using an interrupted time series (ITS) design, this project asks whether the transition from the Independent Police Review Authority (IPRA) to the Civilian Office of Police Accountability (COPA) causally changed how complaints are investigated, substantiated, and acted upon.
 
 [View code & data ↓](#data--code) | [View findings ↓](#findings)
 
@@ -22,23 +17,13 @@ substantiated, and acted upon.
 ## Project Overview
 
 ### Background
-In 2017, Chicago implemented a series of reforms aimed at strengthening independent 
-oversight and civilian review of the Chicago Police Department (CPD). The 
-reforms centered on the creation of COPA, a new Civilian Review Board (CRB),
-which replaced IPRA on Sept 15, 2017 with greater resources, jurisdiction, and 
-independence from the CPD. While evidence indicates that complaints are being 
-sustained at higher rates since COPA's launch, no prior empirical research 
-has established whether this increase can be causally attributed to the reforms themselves.
+In 2017, Chicago implemented a series of reforms aimed at strengthening independent oversight and civilian review of the Chicago Police Department (CPD). The reforms centered on the creation of COPA, a new Civilian Review Board (CRB),which replaced IPRA on Sept 15, 2017 with greater resources, jurisdiction, and independence from the CPD. While evidence indicates that complaints are being sustained at higher rates since COPA's launch, no prior empirical research has established whether this increase can be causally attributed to the reforms themselves.
 
 ### Research Questions
-1. Did Chicago's civilian oversight reforms causally impact complaint substantiation 
-rates, disciplinary recommendations, and CPD implementation of CRB recommendations?
+1. Did Chicago's civilian oversight reforms causally impact complaint substantiation rates, disciplinary recommendations, and CPD implementation of CRB recommendations?
 2. Did the reforms reduce racial disparities in police misconduct investigation outcomes?
 
-**Methodological contribution:** This project also evaluates Predictive Modeling 
-Generated Counterfactual Outcomes (PMGCO), a machine learning approach for generating 
-synthetic controls in policy evaluations where traditional designs (DiD, RDD) are 
-unsuitable due to universal compliance and the absence of a control group.
+**Methodological Contribution:** This project also evaluates Predictive Modeling Generated Counterfactual Outcomes (PMGCO), a machine learning approach for generating synthetic controls in policy evaluations where traditional designs (DiD, RDD) are unsuitable due to universal compliance and the absence of a control group.
 
 ### Data Sources
 A comprehensive database of misconduct complaints and investigation outcomes was built from:
@@ -48,10 +33,7 @@ A comprehensive database of misconduct complaints and investigation outcomes was
 - Demographic data from the American Community Survey  
 - Shapefiles and jurisdiction boundaries from the City of Chicago and `tidycensus`  
 
-> A similar complaint-level dataset is publicly available through [the Invisible 
-Institute](https://github.com/invinst/chicago-police-data). The present database extends that 
-work with post reform covereage, beat-level ACS demographic linkages, and allegation-level recommended and 
-final determinations, allowing for causal analysis of CRB reforms and CPD follow-through.  
+> A similar complaint-level dataset is publicly available through [the Invisible Institute](https://github.com/invinst/chicago-police-data). The present database extends that work with post-reform coverage, beat-level ACS demographic linkages, and allegation-level recommended and final determinations, allowing for causal analysis of CRB reforms and CPD follow-through.  
 
 ### Sample
 - **Time period:** Investigations closed between Sept 15, 2013 and Sept 15, 2021 (±4 years around intervention)
@@ -65,8 +47,8 @@ final determinations, allowing for causal analysis of CRB reforms and CPD follow
 - Final case finding adopted by CPD
 - Final discipline implemented by CPD
 
-The distribution of CRB recommended case findings by agency is shown in Figure 1.
-*(Code for this figure is available [here](https://github.com/m-shames/portfolio/blob/updated/police-oversight/visualizations/fig1_code.R).)*  
+The distribution of CRB-recommended case findings by agency is displayed in Figure 1
+*(Figure code available [here](https://github.com/m-shames/portfolio/blob/updated/police-oversight/visualizations/fig1_code.R))*.    
 
 <div align="center">
   <figure id="fig1">
@@ -89,9 +71,7 @@ The distribution of CRB recommended case findings by agency is shown in Figure 1
 
 ## Findings
 
-**1. Impact on CRB Recommendations:** Strong causal evidence that the 2017 reforms 
-led to an increase in the rate at which the CRB recommended sustaining complaints 
-(see Figure 2).
+**1. Impact on CRB Recommendations:** Strong causal evidence that the 2017 reforms led to an increase in the rate at which the CRB recommended sustaining complaints (see Figure 2).
 
 <div align="center">
   <figure id="fig2">
@@ -103,9 +83,7 @@ led to an increase in the rate at which the CRB recommended sustaining complaint
 
 <br>
 
-**2. Limited Impact on Final Outcomes:** No causal evidence that the reforms led to 
-an increase in final sustain rates, suggesting the 2017 CRB reforms did not impact 
-CPD leadership's adoption of CRB recommendations (see Figure 3).
+**2. Limited Impact on Final Outcomes:** No causal evidence that the reforms led to an increase in final sustain rates, suggesting the 2017 CRB reforms did not impact CPD leadership's adoption of CRB recommendations (see Figure 3).
 
 <div align="center">
   <figure id="fig3">
@@ -117,9 +95,7 @@ CPD leadership's adoption of CRB recommendations (see Figure 3).
 
 <br>
 
-**3. Persistent Racial Disparities:** Racial disparities in complaint substantiation 
-rates persisted in both recommended and final case outcomes despite the reforms 
-(see Figure 4).
+**3. Persistent Racial Disparities:** Racial disparities in complaint substantiation rates persisted in both recommended and final case outcomes despite the reforms (see Figure 4).
 
 <div align="center">
   <figure id="fig4">
@@ -137,24 +113,19 @@ rates persisted in both recommended and final case outcomes despite the reforms
 
 ### Available in this repository
 
-**[`data-pipeline/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data-pipeline)**: ETL pipeline for constructing the misconduct complaint database  
-
-**`data-privacy/`**: De-identification & anonymization *(forthcoming)*  
+**[`data-pipeline/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data-pipeline)**: ETL pipeline for constructing misconduct complaint database (32,000+ records, pre-sample filters)
 
 **[`data/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data)**: Raw and processed data *(excluded via `.gitignore`; final dataset forthcoming post-defense)*
-
-**`docs/`**: Codebook for the misconduct complaint database *(forthcoming)*  
 
 **[`visualizations/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/visualizations)**  
 - [`fig_helper.R`](https://github.com/m-shames/portfolio/blob/updated/police-oversight/visualizations/fig_helper.R): Helper functions for standardized figure specs
 - [`fig1_code.R`](https://github.com/m-shames/portfolio/blob/updated/police-oversight/visualizations/fig1_code.R): Code for Figure 1
 
-**Other**
-- [`COPA_API.py`](https://github.com/m-shames/portfolio/blob/main/projects/police-oversight/1_code-sample/sample_API/COPA_API.py): Python API script for downloading public COPA complaint data from the Chicago Data Portal
 
-### Available upon request
+### Available Upon Request
 - Complete modeling and analysis code (logistic regression, ITS, PMGCO)
-- Detailed results and robustness checks
+- Sensitivity analyses and robustness checks  
+- Detailed results  
 - Complaint database
 
 ----
@@ -164,5 +135,4 @@ rates persisted in both recommended and final case outcomes despite the reforms
 Manuscripts are currently in preparation for peer-reviewed publication.
 
 > This repository reflects research in progress and may not represent final findings. 
-> The complaint database and more complete findings will be shared publicly upon 
-> project completion.
+> The complaint database and more complete findings will be shared publicly upon project completion.

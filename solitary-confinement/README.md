@@ -1,7 +1,6 @@
 # Solitary Confinement Research
 
-Selected research on solitary confinement policy, litigation support, and reform 
-evaluation, with a focus on New York State.  
+Selected research on solitary confinement policy, litigation support, and reform evaluation, with a focus on New York State.  
 
 ---
 
@@ -36,7 +35,7 @@ challenging solitary confinement practices in New York State.
 ---
 
 ## Quantitative Research
-I have extensive experience working with confidential administrative data from Departments of Corrections, including writing and managing FOIA requests, conducting data quality assessments, de-identifying sensitive datasets, designing and executing exploratory and causal analyses, and communicating findings to legal, academic, and lay audiences.  
+Analyses involving administrative and confidential Department of Corrections data, writing and managing FOIA requests, conducting data quality assessments, de-identification, designing and executing exploratory and causal analyses, and communicating findings to legal, academic, and lay audiences.  
 
 Most recently, I conducted a Regression Discontinuity in Time (RDiT) analysis 
 evaluating the impact of mandated sentencing guideline reforms arising from the 
