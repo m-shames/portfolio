@@ -16,7 +16,7 @@ Dissertation research evaluating the impact of Chicago's 2017 civilian oversight
 ## Project Overview
 
 ### Background
-In 2017, Chicago implemented a series of reforms aimed at strengthening independent oversight and civilian review of the Chicago Police Department (CPD). The reforms centered on the creation of COPA, a new Civilian Review Board (CRB),which replaced IPRA on Sept 15, 2017 with greater resources, jurisdiction, and independence from the CPD. While evidence indicates that complaints are being sustained at higher rates since COPA's launch, no prior empirical research has established whether this increase can be causally attributed to the reforms themselves.
+In 2017, Chicago implemented a series of reforms aimed at strengthening independent oversight and civilian review of the Chicago Police Department (CPD). The reforms centered on the creation of COPA, a new Civilian Review Board (CRB), which replaced IPRA on Sept 15, 2017 with greater resources, jurisdiction, and independence from the CPD. While evidence indicates that complaints are being sustained at higher rates since COPA's launch, no prior empirical research has established whether this increase can be causally attributed to the reforms themselves.
 
 ### Research Questions
 1. Did Chicago's civilian oversight reforms causally impact complaint substantiation rates, disciplinary recommendations, and CPD implementation of CRB recommendations?
@@ -41,20 +41,17 @@ A comprehensive database of misconduct complaints and investigation outcomes was
 - **Final sample:** 28,364 unique police misconduct allegations  
 
 ### Outcome Variables
-- CRB recommended findings  
-- Final case finding adopted by CPD  
-- CRB recommended discipline  
-- Final discipline implemented by CPD  
-
-The distribution of CRB-recommended and CPD-adopted case findings by agency are displayed in Figures 1a and 1b respectively. 
-
+- CRB recommended findings ([Figure 1a](#fig1a))  
+- Final case finding adopted by CPD ([Figure 1b](#fig1b))  
+- CRB recommended and CPD-implemented discipline (officer-level, [Figure 2](#fig2))  
 
   <div align="center">     
     <figure id="fig1a">                                                         
       <img src="visualizations/fig1a.png" alt="Distribution of CRB-recommended  
   findings by agency. COPA sustained 2.5× more allegations than IPRA (10% vs.   
   4%)" width="70%">                                              
-      <figcaption><strong>Figure 1a</strong></figcaption>
+      <br>
+      <figcaption align="center"><strong>Figure 1a:</strong> Distribution of CRB-Recommended Findings by Agency</figcaption>
     </figure>                                               
   </div>
 
@@ -64,13 +61,25 @@ The distribution of CRB-recommended and CPD-adopted case findings by agency are 
     <figure id="fig1b">
       <img src="visualizations/fig1b.png" alt="Distribution of CPD-adopted final
    findings by agency. CPD's final sustain rate shifted only modestly (4% vs. 3%)." width="70%">                                             
-      <figcaption><strong>Figure 1b</strong></figcaption>
+      <br>
+      <figcaption align="center"><strong>Figure 1b:</strong> Distribution of CPD-Adopted Final Findings by Agency</figcaption>
     </figure>
   </div>
 
   <br>
 
 >  χ² tests on 2×2 tables (sustained vs. not sustained) indicate the difference in CRB-recommended sustain rates between agencies was small in magnitude (Cramér's V = 0.12) but statistically significant (χ²(1) = 377.92, p < .001). The difference in final findings was also statistically significant (χ²(1) = 42.78, p < .001) but the effect size was negligible (V = 0.04). ***χ² results are exploratory and do not take account of allegations being clustered within officers and cases.***
+
+
+  <div align="center">
+    <figure id="fig2">
+      <img src="visualizations/fig2.png" alt="Bar chart comparing CRB-recommended vs. CPD-implemented discipline severity (None/Minor, Suspension 1-30 days, Suspension 31+ days, Termination) for all CRB-sustained allegations, by IPRA (2013-2017) and COPA (2017-2021) agency periods." width="70%">
+      <br>
+      <figcaption align="center"><strong>Figure 2:</strong> Disciplinary Outcomes by Agency. <em>None/Minor = No action, Violation noted, or Reprimand.</em></figcaption>
+    </figure>
+  </div>
+
+  <br>
 
 ### Research Design
 - Logistic Regression
@@ -83,37 +92,37 @@ The distribution of CRB-recommended and CPD-adopted case findings by agency are 
 
 ## Findings
 
-**1. Impact on CRB Recommendations:** Strong causal evidence that the 2017 reforms led to an increase in the rate at which the CRB recommended sustaining complaints (see Figure 2).
-
-<div align="center">
-  <figure id="fig2">
-    <img src="visualizations/fig2.png" alt="CRB recommended outcomes over time" width="70%">
-    <br>
-    <figcaption><strong>Figure 2:</strong> Predicted Probability of CRB's Recommended Outcome = Sustain</figcaption>
-  </figure>
-</div>
-
-<br>
-
-**2. Limited Impact on Final Outcomes:** No causal evidence that the reforms led to an increase in final sustain rates, suggesting the 2017 CRB reforms did not impact CPD leadership's adoption of CRB recommendations (see Figure 3).
+**1. Impact on CRB Recommendations:** Strong causal evidence that the 2017 reforms led to an increase in the rate at which the CRB recommended sustaining complaints (see [Figure 3](#fig3)).
 
 <div align="center">
   <figure id="fig3">
-    <img src="visualizations/fig3.png" alt="CPD final outcomes over time" width="70%">
+    <img src="visualizations/fig3.png" alt="CRB recommended outcomes over time" width="70%">
     <br>
-    <figcaption><strong>Figure 3:</strong> Predicted Probability of Final Outcome = Sustain</figcaption>
+    <figcaption><strong>Figure 3:</strong> Predicted Probability of CRB's Recommended Outcome = Sustain</figcaption>
   </figure>
 </div>
 
 <br>
 
-**3. Persistent Racial Disparities:** Racial disparities in complaint substantiation rates persisted in both recommended and final case outcomes despite the reforms (see Figure 4).
+**2. Limited Impact on Final Outcomes:** No causal evidence that the reforms led to an increase in final sustain rates, suggesting the 2017 CRB reforms did not impact CPD leadership's adoption of CRB recommendations (see [Figure 4](#fig4)).
 
 <div align="center">
   <figure id="fig4">
-    <img src="visualizations/fig4.png" alt="Racial disparities in outcomes" width="70%">
+    <img src="visualizations/fig4.png" alt="CPD final outcomes over time" width="70%">
     <br>
-    <figcaption><strong>Figure 4:</strong> Racial Disparities in CRB Recommended Sustain Rates</figcaption>
+    <figcaption><strong>Figure 4:</strong> Predicted Probability of Final Outcome = Sustain</figcaption>
+  </figure>
+</div>
+
+<br>
+
+**3. Persistent Racial Disparities:** Racial disparities in complaint substantiation rates persisted in both recommended and final case outcomes despite the reforms (see [Figure 5](#fig5)).
+
+<div align="center">
+  <figure id="fig5">
+    <img src="visualizations/fig5.png" alt="Racial disparities in outcomes" width="70%">
+    <br>
+    <figcaption><strong>Figure 5:</strong> Racial Disparities in CRB Recommended Sustain Rates</figcaption>
   </figure>
 </div>
 
@@ -129,13 +138,13 @@ The distribution of CRB-recommended and CPD-adopted case findings by agency are 
 
 **[`data/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data)**: Raw and processed data *(excluded via `.gitignore`; final dataset forthcoming post-defense)*
 
-**[`visualizations/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/visualizations)**: Rendered readme figures (code available upon request)  
-
+**[`visualizations/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/visualizations)**: Rendered readme png files
 
 ### Available Upon Request
 - Complete modeling and analysis code (logistic regression, ITS, PMGCO)
 - Sensitivity analyses and robustness checks  
 - Detailed results  
+- Visualization scripts
 - Complaint database
 
 ----
