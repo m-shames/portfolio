@@ -48,11 +48,11 @@ A comprehensive database of misconduct complaints and investigation outcomes was
   <div align="center">     
     <a id="fig1a"></a>
     <figure id="fig1a">                                                         
+      <figcaption align="center"><strong>Figure 1a:</strong> Distribution of CRB-Recommended Findings by Agency</figcaption>
+      <br>
       <img src="visualizations/fig1a.png" alt="Distribution of CRB-recommended  
   findings by agency. COPA sustained 2.5× more allegations than IPRA (10% vs.   
   4%)" width="70%">                                              
-      <br>
-      <figcaption align="center"><strong>Figure 1a:</strong> Distribution of CRB-Recommended Findings by Agency</figcaption>
     </figure>                                               
   </div>
 
@@ -61,10 +61,10 @@ A comprehensive database of misconduct complaints and investigation outcomes was
   <div align="center">
     <a id="fig1b"></a>
     <figure id="fig1b">
+      <figcaption align="center"><strong>Figure 1b:</strong> Distribution of CPD-Adopted Final Findings by Agency</figcaption>
+      <br>
       <img src="visualizations/fig1b.png" alt="Distribution of CPD-adopted final
    findings by agency. CPD's final sustain rate shifted only modestly (4% vs. 3%)." width="70%">                                             
-      <br>
-      <figcaption align="center"><strong>Figure 1b:</strong> Distribution of CPD-Adopted Final Findings by Agency</figcaption>
     </figure>
   </div>
 
@@ -76,9 +76,9 @@ A comprehensive database of misconduct complaints and investigation outcomes was
   <div align="center">
     <a id="fig2"></a>
     <figure id="fig2">
-      <img src="visualizations/fig2.png" alt="Bar chart comparing CRB-recommended vs. CPD-implemented discipline severity (None/Minor, Suspension 1-30 days, Suspension 31+ days, Termination) for all CRB-sustained allegations, by IPRA (2013-2017) and COPA (2017-2021) agency periods." width="70%">
+      <figcaption align="center"><strong>Figure 2:</strong> Disciplinary Outcomes by Agency.<br><em>Note: None/Minor = No action, Violation noted, or Reprimand.</em></figcaption>
       <br>
-      <figcaption align="center"><strong>Figure 2:</strong> Disciplinary Outcomes by Agency. <em>None/Minor = No action, Violation noted, or Reprimand.</em></figcaption>
+      <img src="visualizations/fig2.png" alt="Bar chart comparing CRB-recommended vs. CPD-implemented discipline severity (None/Minor, Suspension 1-30 days, Suspension 31+ days, Termination) for all CRB-sustained allegations, by IPRA (2013-2017) and COPA (2017-2021) agency periods." width="70%">
     </figure>
   </div>
 
@@ -100,9 +100,9 @@ A comprehensive database of misconduct complaints and investigation outcomes was
 <div align="center">
   <a id="fig3"></a>
   <figure id="fig3">
-    <img src="visualizations/fig3.png" alt="CRB recommended outcomes over time" width="70%">
-    <br>
     <figcaption><strong>Figure 3:</strong> Predicted Probability of CRB's Recommended Outcome = Sustain</figcaption>
+    <br>
+    <img src="visualizations/fig3.png" alt="CRB recommended outcomes over time" width="70%">
   </figure>
 </div>
 
@@ -113,9 +113,9 @@ A comprehensive database of misconduct complaints and investigation outcomes was
 <div align="center">
   <a id="fig4"></a>
   <figure id="fig4">
-    <img src="visualizations/fig4.png" alt="CPD final outcomes over time" width="70%">
-    <br>
     <figcaption><strong>Figure 4:</strong> Predicted Probability of Final Outcome = Sustain</figcaption>
+    <br>
+    <img src="visualizations/fig4.png" alt="CPD final outcomes over time" width="70%">
   </figure>
 </div>
 
@@ -126,9 +126,9 @@ A comprehensive database of misconduct complaints and investigation outcomes was
 <div align="center">
   <a id="fig5"></a>
   <figure id="fig5">
-    <img src="visualizations/fig5.png" alt="Racial disparities in outcomes" width="70%">
-    <br>
     <figcaption><strong>Figure 5:</strong> Racial Disparities in CRB Recommended Sustain Rates</figcaption>
+    <br>
+    <img src="visualizations/fig5.png" alt="Racial disparities in outcomes" width="70%">
   </figure>
 </div>
 
