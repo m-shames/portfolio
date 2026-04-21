@@ -76,9 +76,10 @@ A comprehensive database of misconduct complaints and investigation outcomes was
   <div align="center">
     <a id="fig2"></a>
     <figure id="fig2">
-      <figcaption align="center"><strong>Figure 2:</strong> Disciplinary Outcomes by Agency.<br><em>Note: None/Minor = No action, Violation noted, or Reprimand.</em></figcaption>
+      <figcaption align="center"><strong>Figure 2:</strong> Disciplinary Outcomes by Agency</figcaption>
       <br>
       <img src="visualizations/fig2.png" alt="Bar chart comparing CRB-recommended vs. CPD-implemented discipline severity (None/Minor, Suspension 1-30 days, Suspension 31+ days, Termination) for all CRB-sustained allegations, by IPRA (2013-2017) and COPA (2017-2021) agency periods." width="70%">
+      <p align="right"><em>Note: None/Minor = No action, Violation noted, or Reprimand.</em></p>
     </figure>
   </div>
 
@@ -140,7 +141,7 @@ A comprehensive database of misconduct complaints and investigation outcomes was
 
 ### Included in This Repository
 
-**[`data-pipeline/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data-pipeline)**: ETL pipeline for constructing misconduct complaint database (32,000+ records, pre-sample filters)
+**[`data-pipeline/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data-pipeline)**: ETL pipeline for constructing misconduct complaint database (32,000+ records, pre sample filters)
 
 **[`data/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data)**: Raw and processed data *(excluded via `.gitignore`; final dataset forthcoming post-defense)*
 
