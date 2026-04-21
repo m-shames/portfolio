@@ -7,10 +7,9 @@ Dissertation research evaluating the impact of Chicago's 2017 civilian oversight
 ----
 
 ## Key Findings
-
 - Causal evidence that **CRB allegation substantiation rates increased** for civilian complaints reviewed post-reform (statistically significant).
-- Statistical evidence that **racial disparities in substantiation rates persisted post-reform** (statistically significant).
 - **No causal evidence that the 2017 reforms impacted** ***final*** **case or disciplinary outcomes** implemented by the Chicago Police Department.
+- Statistical evidence that **racial disparities in substantiation rates persisted post-reform** (statistically significant).
 
 ----
 
@@ -42,23 +41,36 @@ A comprehensive database of misconduct complaints and investigation outcomes was
 - **Final sample:** 28,364 unique police misconduct allegations  
 
 ### Outcome Variables
-- CRB recommended case finding
-- CRB recommended officer discipline
-- Final case finding adopted by CPD
-- Final discipline implemented by CPD
+- CRB recommended findings  
+- Final case finding adopted by CPD  
+- CRB recommended discipline  
+- Final discipline implemented by CPD  
 
-The distribution of CRB-recommended case findings by agency is displayed in Figure 1
-*(Figure code available [here](https://github.com/m-shames/portfolio/blob/updated/police-oversight/visualizations/fig1_code.R))*.    
+The distribution of CRB-recommended and CPD-adopted case findings by agency are displayed in Figures 1a and 1b respectively. 
 
-<div align="center">
-  <figure id="fig1">
-    <img src="visualizations/fig1.png" alt="Distribution of case outcomes" width="70%">
-    <br>
-    <figcaption><strong>Figure 1:</strong> Distribution of Recommended Case Outcomes by Agency</figcaption>
-  </figure>
-</div>
 
-<br>
+  <div align="center">     
+    <figure id="fig1a">                                                         
+      <img src="visualizations/fig1a.png" alt="Distribution of CRB-recommended  
+  findings by agency. COPA sustained 2.5× more allegations than IPRA (10% vs.   
+  4%)" width="70%">                                              
+      <figcaption><strong>Figure 1a</strong></figcaption>
+    </figure>                                               
+  </div>
+
+  <br>
+
+  <div align="center">
+    <figure id="fig1b">
+      <img src="visualizations/fig1b.png" alt="Distribution of CPD-adopted final
+   findings by agency. CPD's final sustain rate shifted only modestly (4% vs. 3%)." width="70%">                                             
+      <figcaption><strong>Figure 1b</strong></figcaption>
+    </figure>
+  </div>
+
+  <br>
+
+>  χ² tests on 2×2 tables (sustained vs. not sustained) indicate the difference in CRB-recommended sustain rates between agencies was small in magnitude (Cramér's V = 0.12) but statistically significant (χ²(1) = 377.92, p < .001). The difference in final findings was also statistically significant (χ²(1) = 42.78, p < .001) but the effect size was negligible (V = 0.04). ***χ² results are exploratory and do not take account of allegations being clustered within officers and cases.***
 
 ### Research Design
 - Logistic Regression
@@ -111,15 +123,13 @@ The distribution of CRB-recommended case findings by agency is displayed in Figu
 
 ## Data & Code
 
-### Available in this repository
+### Included in This Repository
 
 **[`data-pipeline/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data-pipeline)**: ETL pipeline for constructing misconduct complaint database (32,000+ records, pre-sample filters)
 
 **[`data/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/data)**: Raw and processed data *(excluded via `.gitignore`; final dataset forthcoming post-defense)*
 
-**[`visualizations/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/visualizations)**  
-- [`fig_helper.R`](https://github.com/m-shames/portfolio/blob/updated/police-oversight/visualizations/fig_helper.R): Helper functions for standardized figure specs
-- [`fig1_code.R`](https://github.com/m-shames/portfolio/blob/updated/police-oversight/visualizations/fig1_code.R): Code for Figure 1
+**[`visualizations/`](https://github.com/m-shames/portfolio/tree/updated/police-oversight/visualizations)**: Rendered readme figures (code available upon request)  
 
 
 ### Available Upon Request
@@ -132,7 +142,7 @@ The distribution of CRB-recommended case findings by agency is displayed in Figu
 
 ## Publication Status
 
-Manuscripts are currently in preparation for peer-reviewed publication.
+Three manuscripts based on findings from this project are currently in preparation for peer-reviewed publication.
 
 > This repository reflects research in progress and may not represent final findings. 
 > The complaint database and more complete findings will be shared publicly upon project completion.
