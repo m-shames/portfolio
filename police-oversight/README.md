@@ -79,7 +79,7 @@ A comprehensive database of misconduct complaints and investigation outcomes was
       <figcaption align="center"><strong>Figure 2:</strong> Disciplinary Outcomes by Agency</figcaption>
       <br>
       <img src="visualizations/fig2.png" alt="Bar chart comparing CRB-recommended vs. CPD-implemented discipline severity (None/Minor, Suspension 1-30 days, Suspension 31+ days, Termination) for all CRB-sustained allegations, by IPRA (2013-2017) and COPA (2017-2021) agency periods." width="70%">
-      <p align="right"><em>Note: None/Minor = No action, Violation noted, or Reprimand.</em></p>
+      <p align="center"><em>Note: None/Minor = No action, Violation noted, or Reprimand.</em></p>
     </figure>
   </div>
 
@@ -90,7 +90,7 @@ A comprehensive database of misconduct complaints and investigation outcomes was
 - Non-parametric Interrupted Time Series (ITS)  
 - Predictive Modeling Generated Counterfactual Outcomes (PMGCO)
 
-*Code and results for these analyses are available upon request.*
+Code and results for all analyses are available upon request.
 
 ----
 
