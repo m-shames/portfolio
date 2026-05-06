@@ -39,7 +39,7 @@ CPD organizes patrol operations across three nested geographic units: beats, dis
     <figure id="fig-map">
       <figcaption align="center"><strong>Reference Map:</strong> Chicago Police Department geographic structure.</figcaption>
       <br>
-      <img src="visualizations/map_cpd_geo.png" alt="Reference map of the Chicago Police Department's geographic organization, showing 277 beats nested within 22 districts and 5 areas." width="60%">
+      <img src="visualizations/fig-map.png" alt="Reference map of the Chicago Police Department's geographic organization, showing 277 beats nested within 22 districts and 5 areas." width="60%">
     </figure>
   </div>
 
@@ -76,7 +76,7 @@ CPD organizes patrol operations across three nested geographic units: beats, dis
     <figure id="fig1b">
       <figcaption align="center"><strong>Figure 1b:</strong> Distribution of CPD-Adopted Final Findings by Agency</figcaption>
       <br>
-      <img src="visualizations/fig-map.png" alt="Distribution of CPD-adopted final
+      <img src="visualizations/fig1b.png" alt="Distribution of CPD-adopted final
    findings by agency. CPD's final sustain rate shifted only modestly (4% vs. 3%)." width="70%">                                             
     </figure>
   </div>
