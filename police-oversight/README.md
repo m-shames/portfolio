@@ -32,7 +32,20 @@ A comprehensive database of misconduct complaints and investigation outcomes was
 - Demographic data from the American Community Survey  
 - Shapefiles and jurisdiction boundaries from the City of Chicago and `tidycensus`  
 
-> A similar complaint-level dataset is publicly available through [the Invisible Institute](https://github.com/invinst/chicago-police-data). The present database extends that work with post-reform coverage, beat-level ACS demographic linkages, and allegation-level recommended and final determinations, allowing for causal analysis of CRB reforms and CPD follow-through.  
+CPD organizes patrol operations across three nested geographic units: beats, districts, and areas. Beat-level demographic estimates were constructed from ACS 5-year tract data using an author-built crosswalk (see [pipeline documentation](https://github.com/m-shames/portfolio/blob/updated/police-oversight/data-pipeline/README.md)).
+
+  <div align="center">
+    <a id="fig-map"></a>
+    <figure id="fig-map">
+      <figcaption align="center"><strong>Reference Map:</strong> Chicago Police Department geographic structure.</figcaption>
+      <br>
+      <img src="visualizations/map_cpd_geo.png" alt="Reference map of the Chicago Police Department's geographic organization, showing 277 beats nested within 22 districts and 5 areas." width="60%">
+    </figure>
+  </div>
+
+  <br>
+  
+> A similar complaint-level dataset is publicly available through [the Invisible Institute](https://github.com/invinst/chicago-police-data). The present database extends that work with post-reform coverage, beat-level ACS demographic linkages, and allegation-level recommended and final determinations and disciplinary outcomes, allowing for causal analysis of CRB reforms and CPD follow-through.  
 
 ### Sample
 - **Time period:** Investigations closed between Sept 15, 2013 and Sept 15, 2021 (±4 years around intervention)
@@ -63,7 +76,7 @@ A comprehensive database of misconduct complaints and investigation outcomes was
     <figure id="fig1b">
       <figcaption align="center"><strong>Figure 1b:</strong> Distribution of CPD-Adopted Final Findings by Agency</figcaption>
       <br>
-      <img src="visualizations/fig1b.png" alt="Distribution of CPD-adopted final
+      <img src="visualizations/fig-map.png" alt="Distribution of CPD-adopted final
    findings by agency. CPD's final sustain rate shifted only modestly (4% vs. 3%)." width="70%">                                             
     </figure>
   </div>
