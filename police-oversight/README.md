@@ -2,7 +2,7 @@
 
 Dissertation research evaluating the impact of Chicago's 2017 civilian oversight reforms on police misconduct investigation outcomes and officer discipline. Using an interrupted time series (ITS) design, this project asks whether the transition from the Independent Police Review Authority (IPRA) to the Civilian Office of Police Accountability (COPA) causally changed how complaints are investigated, substantiated, and acted upon.
 
-[View code & data ↓](#data--code) | [View findings ↓](#findings)
+[View code & data ↓](#data--code) | [View findings ↓](#findings) | [Interactive dashboard ↗](https://m-shames.shinyapps.io/crb-allegations-explorer/)
 
 ----
 
@@ -37,7 +37,7 @@ CPD organizes patrol operations across three nested geographic units: beats, dis
   <div align="center">
     <a id="fig-map"></a>
     <figure id="fig-map">
-      <figcaption align="center"><strong>Reference Map:</strong> Chicago Police Department geographic structure.</figcaption>
+      <figcaption align="center"><strong>Reference Map:</strong> Chicago Police Department Geographic Structure.</figcaption>
       <br>
       <img src="visualizations/fig-map.png" alt="Reference map of the Chicago Police Department's geographic organization, showing 277 beats nested within 22 districts and 5 areas." width="60%">
     </figure>
